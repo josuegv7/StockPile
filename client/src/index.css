@@ -1,0 +1,92 @@
+body {
+  font-family: 'Lora';
+  background: linear-gradient(rgba(181, 167, 153, 0.65), rgba(241, 239, 239, 0.541)), url("./assets/images/image3.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.stage{
+  /* background-image: url("./assets/images/cover.jpg"); */
+  background-size: cover;
+  color: #3D3513;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.stagecaption{
+  color: #3D3513;
+  font-size: 1.4rem;
+  font-weight: 400;
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stagecaption h1{
+  color: #3D3513;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+/* WELCOME */
+.pagesection {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  font-family: 'Lora';
+
+}
+.intro {
+  position: relative;
+}
+@media (min-width: 992px){
+.introimg {
+  width: 60%;
+  height: 31rem;
+  float: right
+
+  }
+  .intro .introtext {
+    left: 9%;
+    width: 40%;
+    margin-top: 11rem;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    
+  }
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+
+}
+
+  .sectionheading {
+    text-transform: uppercase;
+  }
+  
+  .sectionheadingupper {
+    display: block;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center
+  }
+  
+  .sectionheadinglower {
+    display: block;
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center
+  }
+  
+  .bgfaded {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
