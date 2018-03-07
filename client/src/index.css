@@ -1,41 +1,163 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(181, 167, 153, 0.65), rgba(241, 239, 239, 0.541)), url("./assets/images/image3.jpg");
+  background: linear-gradient(rgba(181, 167, 153, 0.65), rgba(241, 239, 239, 0.541)), #B5A799;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.stage{
-  /* background-image: url("./assets/images/cover.jpg"); */
-  background-size: cover;
-  color: #3D3513;
-  height: 100%;
-  width: 100%;
   display: flex;
-  align-items: center;
-
+  flex-direction: column;
+}
+/* ----------------------------------------------- */
+/* NAVBAR */
+/* A simple, css only, (some-what) responsive menu */
+.wrap {
+  width: 100%;
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+ul {
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+li {
+  float: left;
+}
+/* clear'n floats */
+ul:after {
+  clear: both;
 }
 
-.stagecaption{
-  color: #3D3513;
-  font-size: 1.4rem;
-  font-weight: 400;
-  max-width: 60rem;
-  margin: 0 auto;
-  text-align: center;
+ul:before,
+ul:after {
+    content: " ";
+    display: table;
 }
 
-.stagecaption h1{
-  color: #3D3513;
-  font-weight: bold;
-  text-transform: uppercase;
+.navbarstyle {
+  position: relative;
+  background: #3D3513;
+  box-shadow: 2px 2px 3px #888;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
+/* prime */
+.ulprimary li a {
+  display: block;
+  padding: 8% 18%;
+  border-right: 3px solid #3D3D3D;
+}
 
+ul.primary li:last-child a {
+  border-right: none;
+}
 
-/* WELCOME */
+ul.primary li a:hover {
+  
+  color: #000;
+}
+
+/* subs */
+ul.sub {
+  position: absolute;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  width: 35%;
+  display:none;
+}
+
+ul.sub li {
+  float: none;
+  margin: 0;
+}
+
+ul.sub li a {
+  border-bottom: 1px dotted #ccc;
+  border-right: none;
+  color: #000;
+  padding: 15px 30px;
+}
+
+ul.sub li:last-child a {
+  border-bottom: none;
+}
+
+ul.sub li a:hover {
+  color: #000;
+  background: #eeeeee;
+}
+
+/* sub display*/
+ul.primary li:hover ul {
+  display: block;
+  background: #fff;
+}
+
+/* keeps the tab background white */
+ul.primary li:hover a {
+  background: #fff;
+  color: #666;
+  text-shadow: none;
+}
+
+ul.primary li:hover > a{
+  color: #000;
+} 
+
+@media only screen and (max-width: 600px) {
+  .decor {
+    padding: 3px;
+  }
+  
+  .wrap {
+    width: 100%;
+    margin-top: 0px;
+  }
+  
+   li {
+    float: none;
+  }
+  
+  ul.primary li:hover a {
+    background: none;
+    color: #8B8B8B;
+    text-shadow: 1px 1px #000;
+  }
+
+  ul.primary li:hover ul {
+    display: block;
+    background: #272727;
+    color: #fff;
+  }
+  
+  ul.sub {
+    display: block;  
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
+  
+  ul.sub li a {
+    background: #272727;
+  	border: none;
+    color: #8B8B8B;
+  }
+  
+  ul.sub li a:hover {
+    color: #ccc;
+    background: none;
+  }
+}
+/* ---------------------------------------------------------- */
+/* ================= WELCOME =============================== */
 .pagesection {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -52,19 +174,29 @@ body {
   float: right
 
   }
-  .intro .introtext {
-    left: 9%;
-    width: 40%;
-    margin-top: 11rem;
+  .introtext {
+    left: 8%;
+    width: 41%;
+    margin-top: 5rem;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.85);
-    
+    line-height: 1.75;
+    padding: 2%
   }
-  .intro .intro-text .intro-button {
-    width: 100%;
-    left: 0;
+  .introbutton {
+    width: 33%;
+    left: 35%;
     position: absolute;
-    bottom: -2rem;
+    bottom: -1rem;
+    background-color: #7E422D;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 11px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
   }
 
 }
@@ -90,3 +222,125 @@ body {
   .bgfaded {
     background-color: rgba(255, 255, 255, 0.85);
   }
+
+/* STILL WELCOME SECOND SECTION */
+
+.cta {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgba(126, 66, 45, 0.9);
+}
+.ctainner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  text-align: center
+}
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+
+/* ====================== FORM SIGNUP / SIGNIN ========================== */
+.cardform {
+  display: flex;
+  width: 500px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+  margin: auto
+}
+.formbody {
+  margin: auto;
+}
+.formtitle{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  }
+.signupinput{
+  width: 100%;
+  margin: 5% 0%;
+  height: 2rem;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background: #e8ebed;
+  color: #576366;
+  font-size: 16px;
+}
+.signuplabel{
+  margin-left: 35%;
+}
+.signupbutton {
+  width: 50%;
+  bottom: 0rem;
+  background-color: #7E422D;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: 11px 1px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 1rem;
+}
+
+/* ============================ ABOUT ============================= */
+
+
+  .aboutheadingimg {
+    position: relative;
+    z-index: 0;
+    display: block;
+    width: 75%;
+    height: auto;
+    margin: auto
+  }
+  .aboutheadingcontent {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 15%;
+    width: 64%;
+    margin-top: -7rem;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    line-height: 1.50;
+    padding: 2%
+  }
+
+  /* ==================  ABOUT ===================================== */
+
+.card {
+    background-color: #FFF;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 24%;
+    margin: 31px
+}
+.cardimg {
+  width: 20%;
+  height: auto;
+  padding-top: 3%;
+
+}
+.cardcontainer {
+    padding: 2px 16px;
+    text-align: center;
+}

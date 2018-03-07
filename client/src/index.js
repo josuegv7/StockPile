@@ -15,6 +15,7 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import Welcome from './components/welcome';
+import About from './components/about';
 import Signin from './components/authComp/signin';
 import Signout from './components/authComp/signout';
 import Signup from './components/authComp/signup';
@@ -47,6 +48,7 @@ ReactDOM.render(
       <Route path="/stockpile/add" component={NewFood} />
       <Route path="/pot" component={Pot} />
       <Route path="/welcome" component={Welcome} />
+      <Route path="/about" component={About} />
       {/* <Route path="stockpile" component={RequireAuth(StockPile)} />   */}
     </div>
     </BrowserRouter>

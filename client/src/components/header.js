@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {Navbar, NavItem, Nav} from 'react-bootstrap';
+import classes from "../index.css"; 
 
 
 
@@ -9,36 +9,46 @@ class Header extends Component {
     renderLinks() {
         if (this.props.authenticated) {
             // Show link to sign out
-            return ([           
-                <Nav pullRight>
-                    <NavItem  href="/stockpile">Homepage</NavItem>
-                    <NavItem  href="/signup">Recipe</NavItem>
-                    <NavItem  href="/stockpile">Stock</NavItem>
-                    <NavItem  href="/signout">Sign Out</NavItem>
-               </Nav>
+            return ([    
+              <ul className="primary">
+                <li>
+                  <a href="/stockpile">Stock</a>
+                </li>
+                <li>
+                  <a href="">Recipe</a>  
+                </li>
+                <li>
+                  <a href="/signout">Sign Out</a> 
+                </li>
+              </ul>
             ]);
         } else {
             // show link to sign in or sign up
-            return [
-                <Nav pullRight>
-                    <NavItem key={1} href="/signin">Sign In</NavItem>
-                    <NavItem key={2} href="/signup">Sign Up</NavItem>
-                </Nav>
-            ];
+            return ([
+                <ul className="primary">
+                <li>
+                  <a href="/signin">Sign In</a>
+                </li>
+                <li>
+                  <a href="signup">Sign Up</a>  
+                </li>
+              </ul>
+            ])
         }
     }
     render() {
         return (
-            <Navbar fluid>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <a href="/">StockPile</a>
-                    </Navbar.Brand>
-                </Navbar.Header>
-                <Nav pullRight>
+        <div className={classes.wrap}>
+             <nav className={classes.navbarstyle}>
+                    <ul className={classes.ulprimary}>
+                        <li>
+                            <a href="/welcome">StockPile</a>
+                        </li>
+                    </ul>
                     {this.renderLinks()}
-                </Nav>
-            </Navbar>
+                </nav>
+        </div>
+
         );                
     }
 }
@@ -49,3 +59,6 @@ function mapStateToProps(state) {
     };
 }
 export default connect(mapStateToProps)(Header);
+
+
+

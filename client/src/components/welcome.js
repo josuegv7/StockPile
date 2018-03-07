@@ -5,46 +5,46 @@ import welcomeImage from "../assets/images/image1.jpg"
 
 
 const welcomePage = () => (
-    <section className={classes.pagesection} clearfix>
-    <div container>
+  <body>
+    <section className={classes.pagesection} clearfix="true">
+    <div container="true">
       <div className={classes.intro}>
-        <img className={classes.introimg}  img-fluid mb-3 mb-lg-0 rounded src={welcomeImage}/>
-        <div className={classes.introtext} left-0 text-center bg-faded p-5 rounded>
+        <img className={classes.introimg}   src={welcomeImage}/>
+        <div className={classes.introtext} >
           <h2 className="section-heading mb-4">
             <span className={classes.sectionheadingupper}>StockPile: Home Cooking</span>
             <span className={classes.sectionheadinglower}>Cooking Made EASY!!</span>
           </h2>
-          <p className="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
+          <p className="mb-3">Every Dish starts with your locally sourced, hand picked ingredients. 
+                              Once you try it, you'll never want to eat out again.
+                              - we guarantee it!
           </p>
-          <div class="intro-button mx-auto">
-              <a class="btn btn-primary btn-xl" href="/signup"  >SignUp</a>
+          <div className={classes.introbutton}>
+              <a className="btn btn-primary btn-xl" href="/signup"  >SignUp</a>
           </div>
         </div>
       </div>
     </div>
-    
   </section>
-  );
+
+  <section className={classes.cta}>
+  <div container="true">
+    <div className="row">
+      <div className="col-xl-9 mx-auto">
+        <div className={classes.ctainner}>
+          <h2 className="section-heading mb-4">
+            <span className={classes.sectionheadingupper}>Our Promise</span>
+            <span className={classes.sectionheadinglower}>To You</span>
+          </h2>
+          <p className="mb-0">When you walk home, we are dedicated to providing you with friendly service, 
+                              a welcoming atmosphere, and above all else, an excellent meal made with the 
+                              highest quality ingredients. You will be satisfied!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</body>
+);
 
   export default welcomePage;
-
-
-
-//   <section className="page-section clearfix">
-//   <div className="container">
-//     <div className="intro">
-//       <img className="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt="">
-//       <div className="intro-text left-0 text-center bg-faded p-5 rounded">
-//         <h2 className="section-heading mb-4">
-//           <span className="section-heading-upper">StockPile: Home Cooking</span>
-//           <span className="section-heading-lower">Cooking Made EASY!!</span>
-//         </h2>
-//         <p className="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
-//         </p>
-//         <div className="intro-button mx-auto">
-//           <a className="btn btn-primary btn-xl" href="#">Sign Up Now</a>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </section>

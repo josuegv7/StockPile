@@ -3,11 +3,15 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import {reduxForm, Field} from 'redux-form';
 
+import classes from "../../index.css"; 
+
+
+
 const renderInput = field => {
     const { input, type, meta: { touched, error}  } = field;
     return (
         <div>
-            <input {...input} type={type} className="form-control" />
+            <input {...input} type={type} className={classes.signupinput}  />
             {touched && ((error && <span className="error">{error}</span>) )}
         </div>
     );
@@ -31,38 +35,40 @@ class signUp extends Component {
     render() {
         const { handleSubmit, fields: {email, password, passwordConfirm}} = this.props;
         return (
-        <div id="signUp" className="container white z-depth-2">
-            <form  className="col s12" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-             <div className = "form-container">
-                <h3 className="green-text">SignUp</h3>
-                <div className='form-group'>
-                    <div className="input-field col s12">
-                    <label>Email</label>
+
+        <div id="signUp" className={classes.cardform}>
+            <form className={classes.formbody} onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+            <h3 className={classes.formtitle}>SignUp</h3>
+             <section className = "Row">
+                <div classname={classes.row}>
+                    
+                    <label className={classes.signuplabel}>Email</label>
                     <br/>
                     <Field  name="email"
                             type= "email"
                             component={renderInput} />
-                    </div>
+            
                 </div>
-                <div className='form-group'>
-                    <div className="input-field col s12">
-                    <label>Password</label>
+                <div classname={classes.row}>
+                    
+                    <label className={classes.signuplabel}>Password</label>
                     <br/>
                     <Field name="password"
                             type= "password" component={renderInput}/>
-                    </div>
+                   
                 </div>
-                <div className='form-group'>
-                    <label>Password Confirm</label>
+                <div classname={classes.row}>
+                    <label className={classes.signuplabel}>Confirm</label>
                     <br/>
                     <Field name="passwordConfirm"
                             type= "password" component={renderInput} />
                 </div>
                 <center>
                 {this.renderAlert()}
-                <button action="submit" className="btn btn-primary green ">Sign Up</button>
+                <button action="submit" className={classes.signupbutton}>Sign Up</button>
+
                 </center>
-             </div>
+             </section>
             </form>
         </div>
         );
@@ -98,3 +104,28 @@ signUp = reduxForm({
 }) (signUp);
 
 export default connect(mapStateToProps, actions)(signUp);
+
+
+
+
+
+
+{/* <div class={classes.cardform}>
+  <form class="signup">
+    <div class="form-title">Sign Up for our Newsletter!</div>
+    <div class="form-body">
+      <div class="row">
+        <input type="text" placeholder="First Name*">
+        <input type="text" placeholder="Last Name*">
+      </div>
+      <div class="row">
+        <input type="text" placeholder="Email Address*">
+      </div>
+    </div>
+    <div class="rule"></div>
+    <div class="form-footer">
+      <a>Sign Me Up!<span class="fa fa-thumbs-o-up"></span></a>
+      <a>Not Now!<span class="fa fa-ban"></span></a>
+    </div>
+  </form>
+</div>/ */}
