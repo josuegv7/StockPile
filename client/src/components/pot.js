@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToPot } from "../actions/index";
-import { Thumbnail } from 'react-bootstrap';
-import potIcon from '../assets/images/cooking-pot.png';
+import potIcon from '../assets/images/pot.png';
+import classes from "../index.css"; 
 
 class Pot extends Component {
     render() {
@@ -13,42 +13,32 @@ class Pot extends Component {
         }
     }
     renderEmptyPot(){
-        return(<Thumbnail src={potIcon}/>)
+        return(<img src={potIcon}/>)
     }
     renderPot() {
         const potIngredientList = this.props.pot.map(function(ingredient){
             return(
-                    <li>{ingredient.val}</li>
+                    <span>{ingredient.val}, </span>
             )
         })
         return(
-            <div className="row">
-            <div className="col s12 m6">
-                <div className="card blue-grey darken-1">
-                    <div className="card-content white-text">
-                        <span className="card-title">Pot:</span>
-                            <ul>
-                                {potIngredientList}
-                            </ul>
-                    </div>
-                    <div className="card-action">
-                     <a href="#">This is a link</a>
-                     <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
+            <div className={classes.potcard}>
+                <div className={classes.titlecontent}>
+                    <h3>POT:</h3>
+                </div>  
+                <hr/>
+                <div className={classes.potintro}>
+                    {potIngredientList}
+                </div> 
             </div>
         )
     }
 };
-
 function mapStateToProps(state) {
     return {
         pot: state.pot.pot
     }
 };
-
-
 export default connect(mapStateToProps)(Pot);
 
 

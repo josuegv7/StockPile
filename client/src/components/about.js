@@ -4,7 +4,6 @@ import aboutImage from "../assets/images/aboutimage.jpeg";
 import frig from "../assets/images/frig.png";
 import comp from "../assets/images/comp.png";
 import cooking from "../assets/images/cooking.png"
-
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
@@ -16,11 +15,11 @@ const aboutPage = () => (
     <section>
         <div className={classes.aboutheadingcontent}>
           <div className="row">
-            <div className="col-xl-9 col-lg-10 mx-auto">
-              <div className="bg-faded rounded p-5">
-                <h2 className="section-heading mb-4">
-                  <span className="section-heading-upper">Quick and Easy</span><br/>
-                  <span className="section-heading-lower">How It Works: 4 Steps</span>
+            <div>
+              <div>
+                <h2>
+                  <span>Quick and Easy</span><br/>
+                  <span>How It Works: 4 Steps</span>
                 </h2>
                 </div>
               </div>
@@ -49,9 +48,7 @@ const aboutPage = () => (
       
     </section>
   </body>
-
 )
-
 export default aboutPage;
 
 

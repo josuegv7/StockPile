@@ -5,9 +5,9 @@ import { fetchFoodList } from '../actions';
 import { Link } from 'react-router-dom';
 import { addToPot } from '../actions/index';
 import Pot from './pot';
+import classes from "../index.css"; 
 
-import {Table, Button, Glyphicon, Panel, PanelGroup} from 'react-bootstrap';
-
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
 class FoodList extends Component {
@@ -26,14 +26,14 @@ class FoodList extends Component {
         return _.map(this.props.foods, food => {
             return (
             
-                        <tr key={food._id}>
-                            <td data-value={food.name}
+                        <li key={food._id} className={classes.tablerow}>
+                            <div data-value={food.name}
                                 onClick={this.addIngredientToPot.bind(this)}
-                                className="mdl-data-table__cell--non-numeric">{food.name}
-                            </td>
-                            <td>{food.dateadded}</td>
-                            <td>{food.type}</td>
-                        </tr>
+                                className={classes.col1}>{food.name}
+                            </div>
+                            <div className={classes.col2}>{food.dateadded}</div>
+                            <div className={classes.col3}>{food.type}</div>
+                        </li>
             );
         });
     }
@@ -41,33 +41,28 @@ class FoodList extends Component {
         // console.log(this.props.foods);
         console.log(this.props.pot)
         return (
-        <PanelGroup accordion id="accordion-uncontrolled-example" defaultActiveKey="2">
-            <Panel bsStyle="success" eventKey="1">
-                <Panel.Heading><Panel.Title componentClass="h3">StockPile</Panel.Title></Panel.Heading>
-                <Table responsive>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Date Added</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {this.displayFoodList()}
-                    </tbody>
-                </Table>
-            </Panel>
-            <center>
-                <Button bsSize="large" bsStyle="success" href="/stockpile/add">
-                    <Glyphicon glyph="shopping-cart" /> Add
-                </Button>
-            </center>
-            <table>
-                <tbody>
-                    <Pot/>
-                </tbody>
-            </table>
-        </PanelGroup>
+               <div className={classes.stockpilecontainer}> 
+                <Row>
+                    <Col lg >
+                    <h2>StockPile</h2>
+                    <ul className={classes.responsivetable}>
+                        <li className={classes.tableheader}>
+                            <div className={classes.col1}>Name</div>
+                            <div className={classes.col2}>Date Added</div>
+                            <div className={classes.col3}>Type</div>
+                        </li>
+                        {this.displayFoodList()}
+                    </ul>
+                    </Col>
+                    <table>
+                        <Col lg={6}/>
+                       
+                            <Pot/>
+                        
+                    </table>
+                <Col/>
+                </Row>
+                </div>
         );
     };
 
@@ -82,3 +77,7 @@ function mapStateToProps(state) {
 
 
 export default connect (mapStateToProps, { fetchFoodList, addToPot })(FoodList);
+
+
+
+

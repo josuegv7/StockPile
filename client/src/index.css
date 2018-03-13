@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(181, 167, 153, 0.65), rgba(241, 239, 239, 0.541)), #B5A799;
+  background: linear-gradient(rgba(181, 167, 153, 0.65), rgba(241, 239, 239, 0.541)), #7E422D;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -10,152 +10,42 @@ body {
 }
 /* ----------------------------------------------- */
 /* NAVBAR */
-/* A simple, css only, (some-what) responsive menu */
-.wrap {
-  width: 100%;
-  display: inline-block;
+.topnav {
+  overflow: hidden;
+  background-color: #B5A799;
+  font-family: 'Lora';
+  margin-bottom: 1rem
 }
-a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-}
-ul {
-  list-style: none;
-  position: relative;
-  text-align: left;
-}
-li {
+.topnav a {
   float: left;
-}
-/* clear'n floats */
-ul:after {
-  clear: both;
-}
-
-ul:before,
-ul:after {
-    content: " ";
-    display: table;
-}
-
-.navbarstyle {
-  position: relative;
-  background: #3D3513;
-  box-shadow: 2px 2px 3px #888;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-/* prime */
-.ulprimary li a {
   display: block;
-  padding: 8% 18%;
-  border-right: 3px solid #3D3D3D;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
-
-ul.primary li:last-child a {
-  border-right: none;
-}
-
-ul.primary li a:hover {
-  
-  color: #000;
-}
-
-/* subs */
-ul.sub {
-  position: absolute;
-  z-index: 200;
-  box-shadow: 2px 2px 0 #BEBEBE;
-  width: 35%;
-  display:none;
-}
-
-ul.sub li {
-  float: none;
-  margin: 0;
-}
-
-ul.sub li a {
-  border-bottom: 1px dotted #ccc;
-  border-right: none;
-  color: #000;
-  padding: 15px 30px;
-}
-
-ul.sub li:last-child a {
-  border-bottom: none;
-}
-
-ul.sub li a:hover {
-  color: #000;
-  background: #eeeeee;
-}
-
-/* sub display*/
-ul.primary li:hover ul {
-  display: block;
-  background: #fff;
-}
-
-/* keeps the tab background white */
-ul.primary li:hover a {
-  background: #fff;
-  color: #666;
-  text-shadow: none;
-}
-
-ul.primary li:hover > a{
-  color: #000;
-} 
-
-@media only screen and (max-width: 600px) {
-  .decor {
-    padding: 3px;
-  }
-  
-  .wrap {
-    width: 100%;
-    margin-top: 0px;
-  }
-  
-   li {
-    float: none;
-  }
-  
-  ul.primary li:hover a {
-    background: none;
-    color: #8B8B8B;
-    text-shadow: 1px 1px #000;
-  }
-
-  ul.primary li:hover ul {
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
     display: block;
-    background: #272727;
-    color: #fff;
-  }
-  
-  ul.sub {
-    display: block;  
-    position: static;
-    box-shadow: none;
-    width: 100%;
-  }
-  
-  ul.sub li a {
-    background: #272727;
-  	border: none;
-    color: #8B8B8B;
-  }
-  
-  ul.sub li a:hover {
-    color: #ccc;
-    background: none;
   }
 }
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
 /* ---------------------------------------------------------- */
 /* ================= WELCOME =============================== */
 .pagesection {
@@ -164,9 +54,9 @@ ul.primary li:hover > a{
   font-family: 'Lora';
 
 }
-.intro {
+/* .intro {
   position: relative;
-}
+} */
 @media (min-width: 992px){
 .introimg {
   width: 60%;
@@ -201,9 +91,9 @@ ul.primary li:hover > a{
 
 }
 
-  .sectionheading {
+.sectionheading {
     text-transform: uppercase;
-  }
+}
   
   .sectionheadingupper {
     display: block;
@@ -251,7 +141,6 @@ ul.primary li:hover > a{
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
 }
 
-
 /* ====================== FORM SIGNUP / SIGNIN ========================== */
 .cardform {
   display: flex;
@@ -259,7 +148,8 @@ ul.primary li:hover > a{
   border-radius: 10px;
   background: white;
   box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
-  margin: auto
+  margin: auto;
+  margin-top: 4rem
 }
 .formbody {
   margin: auto;
@@ -303,8 +193,6 @@ ul.primary li:hover > a{
 }
 
 /* ============================ ABOUT ============================= */
-
-
   .aboutheadingimg {
     position: relative;
     z-index: 0;
@@ -325,7 +213,6 @@ ul.primary li:hover > a{
     line-height: 1.50;
     padding: 2%
   }
-
   /* ==================  ABOUT ===================================== */
 
 .card {
@@ -344,3 +231,125 @@ ul.primary li:hover > a{
     padding: 2px 16px;
     text-align: center;
 }
+
+
+/* =============== STOCKPILE ===================================== */
+
+/* TABLE STOCKPILE */
+
+.stockpilecontainer {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 30%;
+}
+h2 {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+}
+li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .tableheader {
+    background-color:#B5A799;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .tablerow {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  }
+  .col1 {
+    flex-basis: 30%;
+    
+  }
+  .col2 {
+    flex-basis: 40%;   
+  }
+  .col3 {
+    flex-basis: 30%;
+  }
+
+  @media all and (max-width: 767px) {
+    .table-header {
+      display: none;
+    }
+  
+    li {
+      display: block;
+    }
+    .col {
+      
+      flex-basis: 100%;
+      
+    }
+    .col {
+      display: flex;
+      padding: 10px 0;
+    }
+
+    }
+
+  /* ========= POT =================== */
+
+.potcard{
+  text-align: center;
+  margin-left: 40%;
+  z-index: 8;
+  background-color: #F1EFEF;
+  width: 130%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px 
+  };
+.titlecontent{
+  text-align: center;
+  margin: 70px 0 0 0;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+h3{
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+hr{
+  width: 50px;
+  height: 3px;
+  margin: 8px auto;
+  border: 0;
+  color: #F1EFEF;
+}
+.potintro{
+  width: 170px;
+  margin: 0 auto;
+  font: size 1rem;;
+  font-style: italic;
+  line-height: 18px;
+}
+.potinfo{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  margin: 0 auto;
+  padding: 0 50px;
+  color: #DCE3E7;
+  font-family: 'Droid Serif', serif;
+  font-style: 16px;
+  line-height: 24px;
+  z-index: 20;
+  opacity: 0;
+  transition: bottom .3s, opacity .3s cubic-bezier(.33,.66,.66,1);
+}
+

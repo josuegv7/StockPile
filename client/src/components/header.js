@@ -10,44 +10,28 @@ class Header extends Component {
         if (this.props.authenticated) {
             // Show link to sign out
             return ([    
-              <ul className="primary">
-                <li>
+                <div>
                   <a href="/stockpile">Stock</a>
-                </li>
-                <li>
                   <a href="">Recipe</a>  
-                </li>
-                <li>
                   <a href="/signout">Sign Out</a> 
-                </li>
-              </ul>
+                </div>
             ]);
         } else {
             // show link to sign in or sign up
             return ([
-                <ul className="primary">
-                <li>
+                <div>
                   <a href="/signin">Sign In</a>
-                </li>
-                <li>
                   <a href="signup">Sign Up</a>  
-                </li>
-              </ul>
+                </div>
             ])
         }
     }
     render() {
         return (
-        <div className={classes.wrap}>
-             <nav className={classes.navbarstyle}>
-                    <ul className={classes.ulprimary}>
-                        <li>
-                            <a href="/welcome">StockPile</a>
-                        </li>
-                    </ul>
-                    {this.renderLinks()}
-                </nav>
-        </div>
+        <nav className={classes.topnav}>
+             <a href="/welcome">StockPile</a>
+            {this.renderLinks()}
+        </nav>
 
         );                
     }
@@ -59,6 +43,3 @@ function mapStateToProps(state) {
     };
 }
 export default connect(mapStateToProps)(Header);
-
-
-
