@@ -30,6 +30,7 @@ class Pot extends Component {
                 <div className={classes.potintro}>
                     {potIngredientList}
                 </div> 
+                
             </div>
         )
     }
