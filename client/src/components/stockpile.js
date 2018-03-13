@@ -5,8 +5,8 @@ import { fetchFoodList } from '../actions';
 import { Link } from 'react-router-dom';
 import { addToPot } from '../actions/index';
 import Pot from './pot';
+import AddFood from './add_food';
 import classes from "../index.css"; 
-
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
@@ -53,12 +53,13 @@ class FoodList extends Component {
                         </li>
                         {this.displayFoodList()}
                     </ul>
+                    <div>
+                        <AddFood/>
+                    </div>
                     </Col>
                     <table>
                         <Col lg={6}/>
-                       
                             <Pot/>
-                        
                     </table>
                 <Col/>
                 </Row>

@@ -3,17 +3,17 @@ import { Field, reduxForm } from 'redux-form';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFood } from '../actions';
+import classes from "../index.css"; 
 
 const renderField= field => {
     const { input, type } = field;
     return (
-        <div className="form-group">
-            <label>{field.label}</label>
+        <div className={classes.addfoodinput}>
+            <label className={classes.addfoodlabel}>{field.label}</label>
             <input {...input} type={type} className="form-control" />
         </div>
     )
 }
-
 class AddFood extends Component {
     onSubmit(values) {
         console.log(values)
@@ -25,26 +25,26 @@ class AddFood extends Component {
     render () {
         const { handleSubmit, fields: {name, type} } = this.props;
         return (
-            <div>
-                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+           
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={classes.addfoodform}>
                     <Field
-                        label="Name of Food"
+                        label="Food "
                         name="name"
                         component={renderField}
                     />
                     <Field
-                        label="Type"
+                        label="Type "
                         name="type"
                         component={renderField}
-                    />
-                    <button to="/stockpile" type="submit" className="btn btn-primary">ADD</button>
-                    <Link to="/stockpile" className="btn btn-danger">Cancel</Link>
+                    /> 
+                    
+                    <button to="/stockpile" type="submit" className={classes.addfoodbutton}>ADD</button>
+                    <button to="/stockpile" className={classes.addfoodbutton}>Cancel</button>
                 </form>
-            </div>
+           
         )
     }
 };
-
 AddFood = reduxForm({
     form: 'NewFoodForm',
     fields: ['name', 'type'],

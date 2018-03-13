@@ -18,7 +18,7 @@ class Pot extends Component {
     renderPot() {
         const potIngredientList = this.props.pot.map(function(ingredient){
             return(
-                    <span>{ingredient.val}, </span>
+                    <span>{ingredient.val} </span>
             )
         })
         return(
@@ -30,7 +30,7 @@ class Pot extends Component {
                 <div className={classes.potintro}>
                     {potIngredientList}
                 </div> 
-                
+
             </div>
         )
     }

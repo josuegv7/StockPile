@@ -57,7 +57,7 @@ body {
 /* .intro {
   position: relative;
 } */
-@media (min-width: 992px){
+
 .introimg {
   width: 60%;
   height: 31rem;
@@ -89,7 +89,7 @@ body {
     font-size: 13px;
   }
 
-}
+
 
 .sectionheading {
     text-transform: uppercase;
@@ -352,4 +352,46 @@ hr{
   opacity: 0;
   transition: bottom .3s, opacity .3s cubic-bezier(.33,.66,.66,1);
 }
+
+/* ======== ADD FOOD FORM ============ */
+
+.addfoodform {
+  position: relative;
+  width: 50%;
+  margin: 5% auto 10% auto;
+  background-color: papayawhip;
+  padding: 3%;
+  border-radius: 10px;
+}
+input {
+  font-size: 1rem;
+  width: 80%;
+  height: 38px;
+  padding: 0px 15px 0px 15px;
+  margin: 3px;
+  background: transparent;
+  outline: none;
+  border: solid 1px #b3aca7;
+  border-bottom: none;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+.addfoodbutton {
+  width: 18%;
+  background-color: #7E422D;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: 11px 1px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 23%;
+  margin-top: 3%;
+  font-size: 13px;
+}
+
+
 

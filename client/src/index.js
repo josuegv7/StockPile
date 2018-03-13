@@ -1,10 +1,5 @@
 import 'font-awesome/css/font-awesome.min.css';
-
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
-
 import './index.css';
-
-
 
 import React from 'react';
 import ReactDOM from 'react-dom';
