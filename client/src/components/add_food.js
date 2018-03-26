@@ -17,10 +17,7 @@ const renderField= field => {
 class AddFood extends Component {
     onSubmit(values) {
         console.log(values)
-        this.props.addFood(values)
-            .then(() => {
-                this.context.router.push('/stockpile');
-            });
+        this.props.addFood(values);
     }
     render () {
         const { handleSubmit, fields: {name, type} } = this.props;

@@ -2,8 +2,9 @@ import Axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
 import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_FOODLIST, ADD_NEW_FOOD, DELETE_INGREDIENT, ADD_INGREDIENT} from './types';
 import { request } from 'https';
-import actions from 'redux-form/lib/actions';
+
 const ROOT_URL = 'http://localhost:4000';
+
 
 // Action for Authentication: sigin/signout/signup
 export function signinUser({ email, password }) {
@@ -36,8 +37,7 @@ export function signupUser({ email, password }) {
                 dispatch({type: AUTH_USER });
                 localStorage.setItem('token', response.data.token);
                 BrowserRouter.push('/stockpile');
-            })
-            .catch (response => dispatch(authError(response.data.error)));
+            });
     };
 }
 export function signoutUser () {
@@ -81,3 +81,4 @@ export const addToPot = (ingredient) => {
         payload:ingredient
     };
 };
+

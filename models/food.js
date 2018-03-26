@@ -18,7 +18,6 @@ const FoodSchema = new Schema ({
     }]
 });
 
-
 // Create the model class:
 const Food = mongoose.model('food', FoodSchema);
 module.exports = Food;

@@ -38,7 +38,7 @@ class FoodList extends Component {
         });
     }
     render () {
-        // console.log(this.props.foods);
+        console.log(this.props.foods);
         console.log(this.props.pot)
         return (
                <div className={classes.stockpilecontainer}> 
@@ -57,10 +57,10 @@ class FoodList extends Component {
                         <AddFood/>
                     </div>
                     </Col>
-                    <table>
+                    <div>
                         <Col lg={6}/>
                             <Pot/>
-                    </table>
+                    </div>
                 <Col/>
                 </Row>
                 </div>

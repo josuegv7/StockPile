@@ -9,7 +9,7 @@ const welcomePage = () => (
     <section className={classes.pagesection} clearfix="true">
     <div>
       <div className={classes.intro}>
-        <img className={classes.introimg}   src={welcomeImage}/>
+        <img className={classes.introimg}   src={welcomeImage} alt="NO IAMGE"/>
         <div className={classes.introtext} >
           <h2>
             <span className={classes.sectionheadingupper}>StockPile: Home Cooking</span>

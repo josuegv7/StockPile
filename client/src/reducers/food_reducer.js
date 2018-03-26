@@ -6,6 +6,6 @@ export default function(state = {}, action) {
     case FETCH_FOODLIST:
         return _.mapKeys(action.payload.data, '_id');
     default:
-    return state;
+        return state;
     }
 }

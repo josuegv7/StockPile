@@ -7,7 +7,6 @@ const FoodController = require("./controllers/food_controller");
 const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false });
 
-
 module.exports = function(app) {
     app.get('/', requireAuth, function(req, res) {
         res.send({ message: 'Super secret code is ABC123' });
@@ -28,3 +27,4 @@ module.exports = function(app) {
     app.delete('/myfoodlist/foods/:id', FoodController.delete);
     
 };
+

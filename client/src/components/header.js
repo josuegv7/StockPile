@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import classes from "../index.css"; 
 
 
-
 class Header extends Component {
     renderLinks() {
         if (this.props.authenticated) {
@@ -12,7 +11,7 @@ class Header extends Component {
             return ([    
                 <div>
                   <a href="/stockpile">Stock</a>
-                  <a href="">Recipe</a>  
+                   
                   <a href="/signout">Sign Out</a> 
                 </div>
             ]);
