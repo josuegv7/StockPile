@@ -3,10 +3,7 @@ const Schema = mongoose.Schema;
 
 const PotSchema = new Schema ({
     title: String,
-    foods: [ {
-        type: Schema.Types.ObjectId,
-        ref: 'food'
-    }]
+    foods: String
 });
 
 // Create the modal class:

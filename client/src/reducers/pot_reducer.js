@@ -9,34 +9,11 @@ import { ADD_INGREDIENT, DELETE_INGREDIENT } from '../actions/types';
         default:
             return state;
     }
-}
-
+};
 export default potReducer;
 
 
 
-
-// var data = [
-//     {
-//       0:{
-//          id:5,
-//          name:'xxx'
-//         }
-//     },
-//     {
-//       1:{
-//          id:6,
-//          name:'yyy'
-//         }
-//     }
-//   ];
-  
-//   var arr = _.map(data, function(element, idx) {
-//     return element[idx].name;
-//   });
-  
-//   console.log(arr);
-  
 
 //   let data = [
 //     {

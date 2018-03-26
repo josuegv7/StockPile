@@ -2,8 +2,6 @@ import React from 'react';
 import classes from "../index.css"; 
 import welcomeImage from "../assets/images/image1.jpg"
 
-
-
 const welcomePage = () => (
   <body>
     <section className={classes.pagesection} clearfix="true">

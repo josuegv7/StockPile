@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -6,11 +7,12 @@ import potIcon from '../assets/images/pot.png';
 import classes from "../index.css"; 
 import { lookuprecipesYummly } from "../actions/yummly"; 
 
+
 class Pot extends Component {
     
     onFormSubmit(event) {
         event.preventDefault();
-        this.props.lookuprecipesYummly(event)
+        this.props.lookuprecipesYummly(this.props.pot)
     }
     render() {
         if (this.props.pot[0]){
@@ -20,12 +22,12 @@ class Pot extends Component {
         }
     }
     renderEmptyPot(){
-        return(<img src={potIcon}/>)
+        return(<img src={potIcon} alt='POT'/>)
     }
     renderPot() {
         const potIngredientList = this.props.pot.map(function(ingredient){
             return(
-                    <span>{ingredient.val} </span>
+                    <span>{ingredient}, </span>
             )
         })
         return(
@@ -38,15 +40,15 @@ class Pot extends Component {
                 <div className={classes.potintro}>
                     {potIngredientList}
                 </div> 
-                <button to="/stockpile" type="submit" className={classes.addfoodbutton}>LOOK UP</button>
+                <button type="submit" className={classes.addfoodbutton}>LOOK UP</button>
             </div>
             </form>
         )
     }
 };
 
-function mapDispatchToProps(disptach){
-    return bindActionCreators({lookuprecipesYummly},disptach);
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({lookuprecipesYummly},dispatch);
 }
 
 function mapStateToProps(state) {

@@ -16,9 +16,9 @@ class FoodList extends Component {
     }
     addIngredientToPot = (ev) => {
         const val = ev.target.dataset.value;
-        const newPot = [ ...this.props.pot, {
+        const newPot = [ ...this.props.pot, 
             val
-        }];
+        ];
         this.props.addToPot(newPot)
     }
 

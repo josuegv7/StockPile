@@ -380,17 +380,18 @@ input {
 }
 
 .addfoodbutton {
-  width: 18%;
+  width: 50%;
   background-color: #7E422D;
   border: none;
   border-radius: 1rem;
   color: white;
-  padding: 11px 1px;
+  padding: 10px 1px;
   text-align: center;
   text-decoration: none;
-  margin-left: 23%;
-  margin-top: 3%;
-  font-size: 13px;
+  margin-left: 0%;
+  margin-top: 10%;
+  font-size: 0.8rem;
+  margin-bottom: 5%;
 }
 
 
