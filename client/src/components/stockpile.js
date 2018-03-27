@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { addToPot } from '../actions/index';
 import Pot from './pot';
 import AddFood from './add_food';
+import RecipeList from './recipe_list';
 import classes from "../index.css"; 
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -25,7 +26,6 @@ class FoodList extends Component {
     displayFoodList() {
         return _.map(this.props.foods, food => {
             return (
-            
                         <li key={food._id} className={classes.tablerow}>
                             <div data-value={food.name}
                                 onClick={this.addIngredientToPot.bind(this)}
@@ -60,8 +60,9 @@ class FoodList extends Component {
                     <div>
                         <Col lg={6}/>
                             <Pot/>
+                        <Col/>
                     </div>
-                <Col/>
+                    <RecipeList/>
                 </Row>
                 </div>
         );

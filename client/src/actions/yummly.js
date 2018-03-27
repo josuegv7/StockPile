@@ -9,6 +9,9 @@ const ROOT_LOOK_UP_URL = `http://api.yummly.com/v1/api/recipes?_app_id=${API_ID}
 export function lookuprecipesYummly(ingredients) {
     const yummlyurl =`${ROOT_LOOK_UP_URL}&q=${ingredients}`; 
     const request = Axios.get(yummlyurl);
+
+    console.log('FSDFGSADG', request)
+
     return {
         type: LOOK_UP_RECIPE,
         payload: request

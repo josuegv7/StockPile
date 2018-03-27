@@ -18,7 +18,7 @@ class Header extends Component {
         } else {
             // show link to sign in or sign up
             return ([
-                <div>
+                <div key={1}> 
                   <a href="/signin">Sign In</a>
                   <a href="signup">Sign Up</a>  
                 </div>

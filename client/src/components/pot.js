@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -27,7 +26,7 @@ class Pot extends Component {
     renderPot() {
         const potIngredientList = this.props.pot.map(function(ingredient){
             return(
-                    <span>{ingredient}, </span>
+                    <span key={1}>{ingredient}</span>
             )
         })
         return(

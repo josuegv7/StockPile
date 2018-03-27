@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Route, BrowserRouter } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
+import reduxPromise from 'redux-promise';
 
 import App from './components/App';
 import Welcome from './components/welcome';
@@ -22,7 +23,7 @@ import Reducer from 'redux-form/lib/reducer';
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(reduxThunk, reduxPromise)(createStore);
 const store = createStoreWithMiddleware(reducers);
 const token = localStorage.getItem('token');
 // if we have a token, consider the user to be signed in 
