@@ -10,8 +10,6 @@ export function lookuprecipesYummly(ingredients) {
     const yummlyurl =`${ROOT_LOOK_UP_URL}&q=${ingredients}`; 
     const request = Axios.get(yummlyurl);
 
-    console.log('FSDFGSADG', request)
-
     return {
         type: LOOK_UP_RECIPE,
         payload: request

@@ -62,8 +62,8 @@ class FoodList extends Component {
                             <Pot/>
                         <Col/>
                     </div>
-                    <RecipeList/>
                 </Row>
+                <RecipeList/>
                 </div>
         );
     };
