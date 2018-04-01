@@ -2,13 +2,13 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchFoodList } from '../actions';
-import { Link } from 'react-router-dom';
 import { addToPot } from '../actions/index';
+import Header from './header';
 import Pot from './pot';
 import AddFood from './add_food';
 import RecipeList from './recipe_list';
 import classes from "../index.css"; 
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 
 
 class FoodList extends Component {
@@ -22,7 +22,6 @@ class FoodList extends Component {
         ];
         this.props.addToPot(newPot)
     }
-
     displayFoodList() {
         return _.map(this.props.foods, food => {
             return (
@@ -38,10 +37,11 @@ class FoodList extends Component {
         });
     }
     render () {
-        console.log(this.props.foods);
-        console.log(this.props.pot)
+        // console.log(this.props.foods);
+        // console.log(this.props.pot)
         return (
-               <div className={classes.stockpilecontainer}> 
+            <div className={classes.stockpilecontainer}> 
+            <Header />
                 <Row>
                     <Col lg >
                     <h2>StockPile</h2>
@@ -57,14 +57,18 @@ class FoodList extends Component {
                         <AddFood/>
                     </div>
                     </Col>
-                    <div>
-                        <Col lg={6}/>
+                        <Col/>
                             <Pot/>
                         <Col/>
-                    </div>
                 </Row>
-                <RecipeList/>
-                </div>
+                <Row>
+                    <Col xs={12}>
+                        <Row center="xs">
+                            <RecipeList xs={6} />
+                        </Row>
+                    </Col>
+                </Row>
+            </div>
         );
     };
 

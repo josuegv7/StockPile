@@ -18,7 +18,7 @@ const welcomePage = () => (
                               - we guarantee it!
           </p>
           <div className={classes.introbutton}>
-              <a href="/signup">SignUp</a>
+              <a href="/signup">Sign Up</a>
           </div>
         </div>
       </div>

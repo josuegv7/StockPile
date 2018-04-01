@@ -2,37 +2,34 @@ import _ from "lodash";
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import classes from "../index.css";
-
+import { Grid, Row, Col } from 'react-flexbox-grid';
  class RecipeList extends Component {
     
      renderRecipe(recipeData) {
         return (
-        <div className={classes.card}>
-            <img src={recipeData.smallImageUrls} alt="FoodPic"/>
-            <div className={classes.recipecardcontainer}>
-                <h2><b>{recipeData.recipeName}</b></h2> 
-                <h4>Type of Dish: {recipeData.attributes.course}</h4>
-                <h4>Cook Time: {recipeData.totalTimeInSeconds} Seconds</h4>
-                <p>Ingredients: {recipeData.ingredients.join(', ')}</p> 
-                <a href="#">Read More</a>
-            </div>
-        </div>
-// sdfsadfjskdjfjsalfsajfsajlfjlsajflsdkfjlsdlk // 
+                <div className={classes.card}>
+                    <div className={classes.recipeImg}><img src={recipeData.smallImageUrls} alt="FoodPic"/></div>
+                    <div className={classes.recipecardcontainer}>
+                        <h2><b>{recipeData.recipeName}</b></h2> 
+                        <h4>Type of Dish: {recipeData.attributes.course}</h4>
+                        <h4>Cook Time: {recipeData.totalTimeInSeconds} Seconds</h4>
+                        <p><b>Ingredients:</b> {recipeData.ingredients.join(', ')}</p> 
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
         )
     }
-
     render() {
-        
         return(
             <div>
-                <thead>
-                    <tr key={1}>
-                        <th>Recipe</th>
-                    </tr>
-                </thead>
-                <tbody>
+                <h1>Recipe</h1>
+                <Row>
+                    <br/>
+                    <Col sm={3}>
                     {this.props.recipes.map(this.renderRecipe)}
-                </tbody>
+                    </Col>
+                
+                </Row>
             </div>
         )
     }

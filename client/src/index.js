@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 import reduxPromise from 'redux-promise';
 
@@ -16,8 +16,6 @@ import Signin from './components/authComp/signin';
 import Signout from './components/authComp/signout';
 import Signup from './components/authComp/signup';
 import StockPile from './components/stockpile';
-import NewFood from './components/add_food';
-import Pot from './components/pot';
 import RequireAuth from './components/authComp/require_auth';
 import Reducer from 'redux-form/lib/reducer';
 import reducers from './reducers';
@@ -26,27 +24,23 @@ import { AUTH_USER } from './actions/types';
 const createStoreWithMiddleware = applyMiddleware(reduxThunk, reduxPromise)(createStore);
 const store = createStoreWithMiddleware(reducers);
 const token = localStorage.getItem('token');
-// if we have a token, consider the user to be signed in 
+// With a token the user is signed in:
 if (token) {
-  // need to update the application state
+  // To update the application state:
   store.dispatch({ type: AUTH_USER });
 };
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-    <div>
-      <Route path="/" component={App}/>
+    <Switch>
+      <Route path="/" exact component={App}/>
       <Route path="/signin" component={Signin} />  
       <Route path="/signout" component={Signout} /> 
       <Route path="/signup" component={Signup} />  
       <Route path="/stockpile" component={StockPile} />
-      <Route path="/stockpile/add" component={NewFood} />
-      <Route path="/pot" component={Pot} />
-      <Route path="/welcome" component={Welcome} />
-      <Route path="/about" component={About} />
       {/* <Route path="stockpile" component={RequireAuth(StockPile)} />   */}
-    </div>
+    </Switch>
     </BrowserRouter>
   </Provider>
   , document.querySelector('.container'));

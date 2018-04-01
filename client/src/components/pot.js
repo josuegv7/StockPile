@@ -21,18 +21,18 @@ class Pot extends Component {
         }
     }
     renderEmptyPot(){
-        return(<img src={potIcon} alt='POT'/>)
+        return(<div className={classes.potIcon}><img src={potIcon} alt='POT'/></div>)
     }
     renderPot() {
         const potIngredientList = this.props.pot.map(function(ingredient){
             return(
-                    <span key={1}>{ingredient}</span>
+                    <span key={1}>{ingredient}, </span>
             )
         })
         return(
             <form onSubmit={this.onFormSubmit.bind(this)} >
             <div className={classes.potcard}>
-                <div className={classes.titlecontent}>
+                <div className={classes.pottitlecontent}>
                     <h3>POT:</h3>
                 </div>  
                 <hr/>

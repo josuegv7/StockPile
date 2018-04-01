@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFood } from '../actions';
 import classes from "../index.css"; 
@@ -34,9 +33,8 @@ class AddFood extends Component {
                         name="type"
                         component={renderField}
                     /> 
-                    
-                    <button to="/stockpile" type="submit" className={classes.addfoodbutton}>ADD</button>
-                    <button to="/stockpile" className={classes.addfoodbutton}>Cancel</button>
+                    <button type="submit" className={classes.addfoodbutton}>ADD</button>
+                    <button className={classes.addfoodbutton}>Cancel</button>
                 </form>
            
         )

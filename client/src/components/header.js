@@ -10,8 +10,7 @@ class Header extends Component {
             // Show link to sign out
             return ([    
                 <div>
-                  <a href="/stockpile">Stock</a>
-                   
+                  <li><Link to='/stockpile'>Stock</Link></li>
                   <a href="/signout">Sign Out</a> 
                 </div>
             ]);
@@ -19,6 +18,7 @@ class Header extends Component {
             // show link to sign in or sign up
             return ([
                 <div key={1}> 
+                 <Link to='/stockpile'>Stock</Link>
                   <a href="/signin">Sign In</a>
                   <a href="signup">Sign Up</a>  
                 </div>
@@ -28,7 +28,7 @@ class Header extends Component {
     render() {
         return (
         <nav className={classes.topnav}>
-             <a href="/welcome">StockPile</a>
+             <Link to="/">StockPile</Link>
             {this.renderLinks()}
         </nav>
 

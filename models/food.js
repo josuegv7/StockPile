@@ -9,7 +9,7 @@ const FoodSchema = new Schema ({
     },
     dateadded: {
         type: String,
-        default: Date.now
+        default: Date.now,
     },
     type: String,
     recipes: [{
