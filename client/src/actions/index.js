@@ -1,17 +1,15 @@
 import Axios from 'axios';
-import { BrowserRouter } from 'react-router-dom';
 import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_FOODLIST, ADD_NEW_FOOD, DELETE_INGREDIENT, ADD_INGREDIENT} from './types';
-import { request } from 'https';
+
 
 const ROOT_URL = 'http://localhost:4000';
 
 
 // Action for Authentication: sigin/signout/signup
-export function signinUser({ email, password }) {
+export function signinUser({ email, password }, history) {
     return function (dispatch) {
         // submit email/password to the server
         Axios.post(`${ROOT_URL}/signin`, { email, password })
-
             .then( response => {
                 // IF request is good...
                 // update state to indicate user is authenticated
@@ -19,7 +17,7 @@ export function signinUser({ email, password }) {
                 // Save the JWT token
                 localStorage.setItem('token', response.data.token);
                 // redirect to the route '/stockpile'
-                BrowserRouter.push('/stockpile');
+                history.push('/stockpile');
             })
             .catch( () => {
                 // If bad request...
@@ -30,19 +28,25 @@ export function signinUser({ email, password }) {
     };
 }
 
-export function signupUser({ email, password }) {
-    return function(dispatch) {
+export function signupUser({ email, password }, history) {
+    return function(dispatch, {history}) {
         Axios.post(`${ROOT_URL}/signup`, {email, password})
             .then(response => {
                 dispatch({type: AUTH_USER });
                 localStorage.setItem('token', response.data.token);
-                BrowserRouter.push('/stockpile');
+                history.push('/stockpile');
+            })
+            .catch( () => {
+
             });
     };
 }
+
+
+
 export function signoutUser () {
     localStorage.removeItem('token');
-
+    localStorage.clear();
     return { type: UNAUTH_USER};
 }
 export function authError(error) {

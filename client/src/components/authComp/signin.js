@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {reduxForm, Field} from 'redux-form';
 import { connect } from 'react-redux';
 import * as actions from "../../actions"
-
 import classes from "../../index.css"; 
 
 const renderInput = field => {
@@ -15,17 +14,16 @@ const renderInput = field => {
 }
 
 class Signin extends Component {
-
     handleFormSubmit( { email, password } ) {
         // Need to do something to log user in
-        this.props.signinUser ( { email, password });
+        this.props.signinUser ( { email, password }, this.props.history)
     }
-
     renderAlert() {
         if(this.props.errorMessage) {
             return (
                 <div className="alert alert-danger">
-                    <strong> Oops! </strong> {this.props.errorMessage}
+                    <strong> Wrong Information </strong> 
+                    {this.props.errorMessage}
                 </div>
             );
         }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addToPot } from "../actions/index";
 import potIcon from '../assets/images/pot.png';
 import classes from "../index.css"; 
 import { lookuprecipesYummly } from "../actions/yummly"; 
