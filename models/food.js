@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const RecipeSchema = require('./recipe');
+
 
 // Define the model
 const FoodSchema = new Schema ({
@@ -7,19 +9,23 @@ const FoodSchema = new Schema ({
         type: String,
         require: true
     },
+    
     dateadded: {
-        type: String,
+        type: Date,
         default: Date.now,
     },
+    
     type: String,
-    recipes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'recipe',
-        required: true, 
-        index: true 
-    }]
+    
+    recipes: [RecipeSchema],
+    
+    _user: { 
+        type: Schema.Types.ObjectId, 
+        ref: 'User'
+    }
 });
 
 // Create the model class:
 const Food = mongoose.model('food', FoodSchema);
 module.exports = Food;
+  

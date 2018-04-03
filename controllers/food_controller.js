@@ -11,8 +11,7 @@ module.exports = {
         Food.create(foodProps)
             .then(food => res.send(food))
             .catch(next);
-    },
-
+    },    
     find (req, res, next) {
         const foodId = req.params.id;
         const foodProps = req.body;
@@ -21,7 +20,6 @@ module.exports = {
             .then(food => res.send(food))
             .catch(next);
     },
-
     // Edit one of the food Items:
     edit(req, res, next) {
         const foodId = req.params.id;

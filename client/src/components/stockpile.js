@@ -36,14 +36,15 @@ class FoodList extends Component {
                                 className={classes.col1}>{food.name}
                             </div>
 
-                            <div className={classes.col2}>{food.dateadded}</div>
+                            <div className={classes.col2}>{food.type}</div>
 
-                            <div className={classes.col3}>{food.type}</div>
-
-                            <button data-value={food._id}
-                                    onClick={this.onDeleteClick.bind(this)}
-                            > Throw Out 
-                            </button>
+                            <div className={classes.col3}>
+                                <button data-value={food._id}
+                                        onClick={this.onDeleteClick.bind(this)}
+                                        className={classes.throwoutbutton}
+                                > Throw Out 
+                                </button>
+                            </div>
                         </li>
             );
         });
@@ -60,8 +61,8 @@ class FoodList extends Component {
                     <ul className={classes.responsivetable}>
                         <li className={classes.tableheader}>
                             <div className={classes.col1}>Name</div>
-                            <div className={classes.col2}>Date Added</div>
-                            <div className={classes.col3}>Type</div>
+                            <div className={classes.col2}>Type</div>
+                            <div className={classes.col3}>Throw Out</div>
                         </li>
                         {this.displayFoodList()}
                     </ul>
@@ -92,8 +93,6 @@ function mapStateToProps(state) {
         pot: state.pot.pot,
     };
 }
-
-
 export default connect (mapStateToProps, { fetchFoodList, addToPot, deleteFood })(FoodList);
 
 

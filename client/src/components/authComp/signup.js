@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import {reduxForm, Field} from 'redux-form';
-
 import classes from "../../index.css"; 
 
 
@@ -16,7 +15,6 @@ const renderInput = field => {
         </div>
     );
 };
-
 class signUp extends Component {
     handleFormSubmit(formProps) {
         // console.log(formProps);
@@ -35,7 +33,6 @@ class signUp extends Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-
         <div id="signUp" className={classes.cardform}>
             <form className={classes.formbody} onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
             <h3 className={classes.formtitle}>SignUp</h3>

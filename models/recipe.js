@@ -11,5 +11,4 @@ const RecipeSchema = new Schema ({
 });
 
 // Create the modal class:
-const Recipe = mongoose.model('recipe', RecipeSchema);
-module.exports = Recipe;
+module.exports = RecipeSchema;

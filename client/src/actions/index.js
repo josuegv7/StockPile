@@ -82,9 +82,7 @@ export function addFood (values, history) {
 
             });
 };
-};
-
-
+}
 
 // Add Ingredient to Pot:
 export const addToPot = (ingredient) => {

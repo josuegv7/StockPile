@@ -1,10 +1,5 @@
 body {
   font-family: 'Lora';
-  /* background: rgba(45, 179, 219, 0.863); */
-  /* background-attachment: fixed; */
-  /* background-position: center; */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
   display: flex;
   flex-direction: column;
 }
@@ -90,9 +85,6 @@ body {
     display: inline-block;
     font-size: 13px;
   }
-
-
-
 .sectionheading {
     text-transform: uppercase;
 }
@@ -103,20 +95,16 @@ body {
     font-weight: 800;
     text-align: center
   }
-  
   .sectionheadinglower {
     display: block;
     font-size: 3rem;
     font-weight: 100;
     text-align: center
   }
-  
   .bgfaded {
     background-color: rgba(255, 255, 255, 0.85);
   }
-
 /* STILL WELCOME SECOND SECTION */
-
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -283,6 +271,26 @@ li {
   .col3 {
     flex-basis: 30%;
   }
+.throwoutbutton{
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    width: 7rem;
+    border-radius: 28px;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font-family: Arial;
+    color: #666666;;
+    font-size: 0.7rem;
+    background: #d9d134;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .throwoutbutton:hover {
+    background: #0EAD69;
+    text-decoration: none;
+  }
 
 @media all and (max-width: 767px) {
     .table-header {
@@ -390,8 +398,10 @@ input {
 }
 
 .addfoodbutton {
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
   width: 50%;
-  background-color: #E1D23C;
+  background-color: #0EAD69;;
   border: #ffffff66;
   border-style: solid;
   border-radius: 1rem;

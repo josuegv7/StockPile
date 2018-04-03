@@ -8,6 +8,8 @@ const mongoose = require('mongoose')
 const router = require('./router')
 const keys = require('./config/dev');
 
+require('./models/user');
+require('./models/food')
 
 
 const app = express();
