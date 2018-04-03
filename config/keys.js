@@ -3,8 +3,7 @@
 if (process.env.NODE_ENV === "production"){
     // in Production
     module.exports = require('./prod');
-}
-else {
+} else {
     // in Development
     module.exports = require('./dev');
 }

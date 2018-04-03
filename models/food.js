@@ -19,10 +19,7 @@ const FoodSchema = new Schema ({
     
     recipes: [RecipeSchema],
     
-    _user: { 
-        type: Schema.Types.ObjectId, 
-        ref: 'User'
-    }
+    _user: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
 // Create the model class:
