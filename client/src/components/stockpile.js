@@ -1,8 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchFoodList } from '../actions';
-import { addToPot } from '../actions/index';
+import { fetchFoodList, addToPot, deleteFood } from '../actions';
 import Header from './header';
 import Pot from './pot';
 import AddFood from './add_food';
@@ -22,6 +21,12 @@ class FoodList extends Component {
         ];
         this.props.addToPot(newPot)
     }
+    onDeleteClick = (ev) =>{
+        // const  {id}  = this.props.match.params;
+        const val = ev.target.dataset.value;
+        this.props.deleteFood(val);
+
+    }
     displayFoodList() {
         return _.map(this.props.foods, food => {
             return (
@@ -30,8 +35,15 @@ class FoodList extends Component {
                                 onClick={this.addIngredientToPot.bind(this)}
                                 className={classes.col1}>{food.name}
                             </div>
+
                             <div className={classes.col2}>{food.dateadded}</div>
+
                             <div className={classes.col3}>{food.type}</div>
+
+                            <button data-value={food._id}
+                                    onClick={this.onDeleteClick.bind(this)}
+                            > Throw Out 
+                            </button>
                         </li>
             );
         });
@@ -77,12 +89,12 @@ class FoodList extends Component {
 function mapStateToProps(state) {
     return {
         foods: state.foods,
-        pot: state.pot.pot
+        pot: state.pot.pot,
     };
 }
 
 
-export default connect (mapStateToProps, { fetchFoodList, addToPot })(FoodList);
+export default connect (mapStateToProps, { fetchFoodList, addToPot, deleteFood })(FoodList);
 
 
 

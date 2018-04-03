@@ -10,4 +10,4 @@ export const LOOK_UP_RECIPE = 'look_up_recipe';
 export const GET_RECIPE = 'get_recipe';
 
 export const ADD_INGREDIENT = 'add_ingredient';
-export const DELETE_INGREDIENT = 'delete_ingredient';
+export const DELETE_FOOD = 'delete_food';

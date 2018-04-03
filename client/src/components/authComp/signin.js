@@ -39,18 +39,20 @@ class Signin extends Component {
                     <div className="input-field col s12">
                     <label>Email:</label>
                     <br/>
-                    {/* <Field { ...email } className="form-control" /> */}
                     <Field name="email"
-                            type="email" component={renderInput} />
+                            type="email" 
+                            component={renderInput} 
+                    />
                     </div>
                 </div>
                 <div className="form-group">
                     <div className="input-field col s12">
                     <label>Password:</label>
                     <br/>
-                    {/* <Field { ...password } className="form-control" /> */}
                     <Field name="password"
-                            type="password" component={renderInput} />
+                            type="password" 
+                            component={renderInput} 
+                    />
                     </div>
                 </div>
                 <center>

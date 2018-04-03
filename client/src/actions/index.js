@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_FOODLIST, ADD_NEW_FOOD, DELETE_INGREDIENT, ADD_INGREDIENT} from './types';
+import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_FOODLIST, ADD_NEW_FOOD, DELETE_FOOD, ADD_INGREDIENT} from './types';
 
 
 const ROOT_URL = 'http://localhost:4000';
@@ -29,7 +29,7 @@ export function signinUser({ email, password }, history) {
 }
 
 export function signupUser({ email, password }, history) {
-    return function(dispatch, {history}) {
+    return function(dispatch) {
         Axios.post(`${ROOT_URL}/signup`, {email, password})
             .then(response => {
                 dispatch({type: AUTH_USER });
@@ -41,8 +41,6 @@ export function signupUser({ email, password }, history) {
             });
     };
 }
-
-
 
 export function signoutUser () {
     localStorage.removeItem('token');
@@ -59,7 +57,9 @@ export function authError(error) {
 // Action to get the food list:
 export const fetchFoodList = () => dispatch => {
     Axios
-        .get(`${ROOT_URL}/myfoodlist`)
+        .get(`${ROOT_URL}/myfoodlist`, {
+            headers: { auth: localStorage.getItem('token') }
+        })
         .then( response =>
             dispatch({
                 type: FETCH_FOODLIST,
@@ -68,15 +68,23 @@ export const fetchFoodList = () => dispatch => {
 };
 
 // Add a food to the DB:
-export const addFood = (values) => dispatch => {
-    Axios
-        .post(`${ROOT_URL}/myfoodlist/foods`, values)
-        .then( response =>
+export function addFood (values, history) {
+    return function (dispatch) {
+        Axios.post(`${ROOT_URL}/myfoodlist/foods`, values)
+            .then( response => {
                 dispatch ({
                     type: ADD_NEW_FOOD,
                     payload: response
-                }));
+                });
+                history.push('/stockpile');
+            })
+            .catch( () => {
+
+            });
 };
+};
+
+
 
 // Add Ingredient to Pot:
 export const addToPot = (ingredient) => {
@@ -85,4 +93,21 @@ export const addToPot = (ingredient) => {
         payload:ingredient
     };
 };
+
+// Delete food from Stock:
+export function deleteFood ( id, history) { 
+    return function (dispatch) {
+        Axios.delete(`${ROOT_URL}/myfoodlist/foods/${id}`)
+            .then ( response => {
+                dispatch({
+                type: DELETE_FOOD,
+                payload: id
+            });
+            history.push('/stockpile');
+        })
+        .catch( () => {
+
+        });
+};
+}
 

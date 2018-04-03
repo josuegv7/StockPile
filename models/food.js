@@ -14,7 +14,9 @@ const FoodSchema = new Schema ({
     type: String,
     recipes: [{
         type: Schema.Types.ObjectId,
-        ref: 'recipe'
+        ref: 'recipe',
+        required: true, 
+        index: true 
     }]
 });
 

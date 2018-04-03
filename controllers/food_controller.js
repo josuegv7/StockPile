@@ -8,9 +8,7 @@ module.exports = {
     // Add to the foodlist:
     add(req, res, next) {
         const foodProps = req.body;
-
         Food.create(foodProps)
-
             .then(food => res.send(food))
             .catch(next);
     },
@@ -40,6 +38,6 @@ module.exports = {
         const foodProps = req.body;
         Food.findByIdAndRemove( {_id: foodId} )
             .then(food => res.status(204).send(food))
-            .catch(next)
+            .catch(next);
     }
 };
