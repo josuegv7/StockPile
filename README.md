@@ -11,3 +11,6 @@ The app's core features include:
 * Encrypted account creation and login
 * Yummly filtered recipe search
 
+LogIn Info:
+Email: user3@email.com  
+Password: password
