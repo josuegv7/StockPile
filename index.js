@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production'){
 }
 
 // SERVER SETUP:
-const port = process.env.Port || 4000
+const port = process.env.PORT || 4000
 const server = http.createServer(app)
 server.listen(port)
 console.log('SERVER IS LISTENING ON:', port)
