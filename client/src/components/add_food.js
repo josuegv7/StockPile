@@ -19,7 +19,7 @@ class AddFood extends Component {
         this.props.addFood(values);
     }
     render () {
-        const { handleSubmit, fields: {name, type} } = this.props;
+        const { handleSubmit } = this.props;
         return (
            
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={classes.addfoodform}>

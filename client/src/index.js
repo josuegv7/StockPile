@@ -6,13 +6,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import { createBrowserHistory } from "history";
 import reduxThunk from 'redux-thunk';
 import reduxPromise from 'redux-promise';
 
 import App from './components/App';
-import Welcome from './components/welcome';
-import About from './components/about';
+
 import Signin from './components/authComp/signin';
 import Signout from './components/authComp/signout';
 import Signup from './components/authComp/signup';
@@ -32,7 +30,6 @@ if (token) {
   store.dispatch({ type: AUTH_USER });
 };
 
-const history = createBrowserHistory()
 
 ReactDOM.render(
   <Provider store={store}>

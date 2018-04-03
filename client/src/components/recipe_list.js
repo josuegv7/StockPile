@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import classes from "../index.css";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
  class RecipeList extends Component {
     
      renderRecipe(recipeData) {

@@ -29,7 +29,7 @@ class Signin extends Component {
         }
     }
     render() {
-        const { handleSubmit, fields: { email, password } } = this.props;
+        const { handleSubmit } = this.props;
         return (
         <div id="signUp" className={classes.cardform}>
             <form className={classes.formbody}  onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>

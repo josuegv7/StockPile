@@ -1,4 +1,4 @@
-import { ADD_INGREDIENT, DELETE_INGREDIENT } from '../actions/types';
+import { ADD_INGREDIENT} from '../actions/types';
 
  const potReducer = ( state = {pot:[]}, action) => {
      switch(action.type) {
