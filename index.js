@@ -15,6 +15,7 @@ require('./models/food')
 const app = express();
 
  // DB Setup:
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
 // App Setup:
