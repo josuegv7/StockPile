@@ -6,6 +6,9 @@ the application will match ingredients you have to recipes you can make right aw
 
 
 
+Working on:
+Mobile responsive
+
 
 The app's core features include:
 * Encrypted account creation and login
