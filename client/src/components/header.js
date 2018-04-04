@@ -9,7 +9,6 @@ import classes from "../index.css";
 class Header extends Component {
     renderLinks() {
         if (this.props.authenticated) {
-            console.log(this.props.auth);
             // Show StockPile and Sign Out Link
             return ([
                 <div> 
@@ -33,7 +32,6 @@ class Header extends Component {
              <Link to="/">StockPile</Link>
             {this.renderLinks()}
         </nav>
-
         );                
     }
 }

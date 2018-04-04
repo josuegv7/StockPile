@@ -1,6 +1,5 @@
  // Main starting point of App:
 const express = require('express')
-const http = require('http')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const cors = require('cors')
@@ -8,15 +7,14 @@ const mongoose = require('mongoose')
 const router = require('./router')
 const keys = require('./config/keys');
 
-require('./models/user');
-require('./models/food')
-
-
-const app = express();
+// require('./models/user');
+// require('./models/food')
 
  // DB Setup:
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
+
+const app = express();
 
 // App Setup:
 app.use(morgan('combined'))
@@ -25,7 +23,7 @@ app.use(bodyParser.json())
 router(app)
 
 if (process.env.NODE_ENV === 'production'){
-    // express will serve up production assets
+    // Express will serve up production assets
     app.use(express.static('client/build'));
 
     // Express will serve up the index.html

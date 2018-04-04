@@ -10,6 +10,7 @@ export default function(state = {}, action) {
             return { ...state, error: action.payload };
         case FETCH_FOODLIST:
         return {...state, message: action.payload };
+        default:
+        return state;
     }
-    return state;
 }
