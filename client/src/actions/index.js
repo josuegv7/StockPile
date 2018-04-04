@@ -76,7 +76,8 @@ export function addFood (values, history) {
                     type: ADD_NEW_FOOD,
                     payload: response
                 });
-                history.push('/stockpile');
+                // history.push('/');
+                history.pushState(null, '/stockpile');
             })
             .catch( () => {
 
@@ -101,7 +102,7 @@ export function deleteFood ( id, history) {
                 type: DELETE_FOOD,
                 payload: id
             });
-            history.push('/stockpile');
+            // history.push('/stockpile');
         })
         .catch( () => {
 

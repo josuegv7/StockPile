@@ -60,7 +60,7 @@ class FoodList extends Component {
                     <h2>StockPile</h2>
                     <ul className={classes.responsivetable}>
                         <li className={classes.tableheader}>
-                            <div className={classes.col1}>Name</div>
+                            <div className={classes.col1}>Name <br/>Click to add to Pot </div>
                             <div className={classes.col2}>Type</div>
                             <div className={classes.col3}>Throw Out</div>
                         </li>

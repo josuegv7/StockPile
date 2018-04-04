@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import classes from "../index.css";
 import { Row, Col } from 'react-flexbox-grid';
- class RecipeList extends Component {
+
+
+
+class RecipeList extends Component {
     
      renderRecipe(recipeData) {
         return (
@@ -13,7 +16,8 @@ import { Row, Col } from 'react-flexbox-grid';
                         <h4>Type of Dish: {recipeData.attributes.course}</h4>
                         <h4>Cook Time: {recipeData.totalTimeInSeconds} Seconds</h4>
                         <p><b>Ingredients:</b> {recipeData.ingredients.join(', ')}</p> 
-                        <a href="#">Read More</a>
+
+                        <a href={'https://www.yummly.com/recipe/' + recipeData.id}>Recipe</a>
                     </div>
                 </div>
         )

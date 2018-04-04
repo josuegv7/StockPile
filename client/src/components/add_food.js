@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { addFood } from '../actions';
 import classes from "../index.css"; 
-
+import { Redirect } from 'react-router-dom';
 const renderField= field => {
     const { input, type } = field;
     return (
@@ -15,9 +15,9 @@ const renderField= field => {
 }
 class AddFood extends Component {
     onSubmit(values) {
-        console.log(values)
         this.props.addFood(values);
     }
+
     render () {
         const { handleSubmit } = this.props;
         return (
@@ -33,8 +33,9 @@ class AddFood extends Component {
                         name="type"
                         component={renderField}
                     /> 
-                    <button type="submit" className={classes.addfoodbutton}>ADD</button>
+                    <button type="submit" className={classes.addfoodbutton} >ADD</button>
                     <button className={classes.addfoodbutton}>Cancel</button>
+                    {/* <Redirect to={'/stockpile'} /> */}
                 </form>
            
         )
