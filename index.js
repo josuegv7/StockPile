@@ -21,7 +21,7 @@ mongoose.connect(keys.mongoURI);
 // App Setup:
 app.use(morgan('combined'))
 app.use(cors())
-app.use(bodyParser.json({type: '*/*'}))
+app.use(bodyParser.json())  
 router(app)
 
 if (process.env.NODE_ENV === 'production'){
@@ -37,7 +37,6 @@ if (process.env.NODE_ENV === 'production'){
 
 // SERVER SETUP:
 const PORT = process.env.PORT || 4000
-const server = http.createServer(app)
-server.listen(PORT)
+app.listen(PORT);
 console.log('SERVER IS LISTENING ON:', PORT)
 
