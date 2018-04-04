@@ -6,7 +6,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const router = require('./router')
-const keys = require('./config/dev');
+const keys = require('./config/keys');
 
 require('./models/user');
 require('./models/food')
