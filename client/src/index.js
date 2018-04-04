@@ -16,7 +16,7 @@ import Signout from './components/authComp/signout';
 import Signup from './components/authComp/signup';
 import StockPile from './components/stockpile';
 import RequireAuth from './components/authComp/require_auth';
-import noRequireAuth from './components/authComp/authroutes';
+// import noRequireAuth from './components/authComp/authroutes';
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 
@@ -36,9 +36,9 @@ ReactDOM.render(
     <BrowserRouter >
     <Switch>
       <Route path="/" exact component={App}/>
-      <Route path="/signin" component={noRequireAuth(Signin)} />  
-      <Route path="/signup" component={noRequireAuth(Signup)} />  
-      <Route path="/signout" component={RequireAuth(Signout)} /> 
+      <Route path="/signin" component={Signin} />  
+      <Route path="/signup" component={Signup} />  
+      <Route path="/signout" component={Signout} /> 
       <Route path="/stockpile" component={RequireAuth(StockPile)} />  
     </Switch>
     </BrowserRouter>
