@@ -24,24 +24,26 @@ class Pot extends Component {
     renderPot() {
         const potIngredientList = this.props.pot.map(function(ingredient){
             return(
-                    <span key={1}>{ingredient}, </span>
+                    <span key={0}>{ingredient}, </span>
             )
         })
         return(
             <form onSubmit={this.onFormSubmit.bind(this)} >
             <div className={css.rigthcard}>
-              <div className="card">
+              {/* <div className="card"> */}
                 <div className={css.pottitle}>
-                    <h3>POT:</h3>
+                    <h5>POT:</h5>
                 </div>
                 <hr/>
                 <div className={css.ingredientlist}>
                     {potIngredientList}
                 </div>
                 <button type="submit" className={css.potbutton}>LOOK UP</button>
-            </div>
+            {/* </div> */}
+          {/* </div> */}
           </div>
-            </form>
+          </form>
+    
         )
     }
 };

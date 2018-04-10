@@ -73,33 +73,35 @@ class FoodList extends Component {
                       </tbody>
                     </table>
                     </div>
-
-
                         <AddFood/>
-
                     </Col>
-                    <Col/>
+                    <Col>
                       <Pot/>
-                    <Col/>
+                    </Col>
+                    <br/>
+                    <Col>
+                    <RecipeList xs={6} />
+                    </Col>
                 </Row>
                 </div>
-                <Row>
+                
+                {/* <Row>
                     <Col xs={12}>
                         <Row center="xs">
                             <RecipeList xs={6} />
                         </Row>
                     </Col>
-                </Row>
+                </Row> */}
             </div>
         );
     };
-
 }
 
 function mapStateToProps(state) {
     return {
         foods: state.foods,
         pot: state.pot.pot,
+    
     };
 }
 export default connect (mapStateToProps, { fetchFoodList, addToPot, deleteFood })(FoodList);
