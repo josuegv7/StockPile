@@ -9,7 +9,7 @@ class Header extends Component {
         if (this.props.authenticated) {
             // Show StockPile and Sign Out Link
             return ([
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li><a href="/stockpile">StockPile</a></li>
               <li><a href="/signout">Sign Out</a></li>
             </ul>
@@ -17,7 +17,7 @@ class Header extends Component {
         } else {
             // If not Signed In: Links to Sign In or Sign Up
             return([
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
                   <li><a href="/signin">Sign In</a></li>
                   <li><a href="/signup">Sign up</a></li>
                 </ul>
@@ -27,9 +27,8 @@ class Header extends Component {
     render() {
         return (
             <nav className="green darken-3">
-              <div class="nav-wrapper">
-                <a href="/" class="brand-logo">StockPile</a>
-                {/* <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> */}
+              <div className="nav-wrapper">
+                <a href="/" className="brand-logo">StockPile</a>
                 {this.renderLinks()}
               </div>
             </nav>
