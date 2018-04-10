@@ -1,0 +1,22 @@
+.form{
+  margin: 0 auto;
+  width: 50%;
+}
+
+.form h3{
+  font-family: 'Lora', sans-serif;
+  text-align: center;
+}
+
+.form button{
+  background: none;
+  border: 3px solid #91B1B5;
+  color: #green darken-3;
+  font-family: 'Lora', sans-serif;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 10px 52px;
+  display: block;
+  overflow: heidden;
+  margin-top: 50px
+}

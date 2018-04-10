@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import classes from "../index.css";
+// import classes from "../index.css";
 import { Row, Col } from 'react-flexbox-grid';
 
 
@@ -9,9 +9,9 @@ class RecipeList extends Component {
     
      renderRecipe(recipeData) {
         return (
-                <div className={classes.card}>
-                    <div className={classes.recipeImg}><img src={recipeData.smallImageUrls} alt="FoodPic"/></div>
-                    <div className={classes.recipecardcontainer}>
+                <div >
+                    <div><img src={recipeData.smallImageUrls} alt="FoodPic"/></div>
+                    <div>
                         <h2><b>{recipeData.recipeName}</b></h2> 
                         <h4>Type of Dish: {recipeData.attributes.course}</h4>
                         <h4>Cook Time: {recipeData.totalTimeInSeconds} Seconds</h4>

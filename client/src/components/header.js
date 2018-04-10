@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { signoutUser} from '../actions/index'
-import classes from "../index.css"; 
 
 
 class Header extends Component {
@@ -11,44 +9,44 @@ class Header extends Component {
         if (this.props.authenticated) {
             // Show StockPile and Sign Out Link
             return ([
-                <div> 
-                <Link to='/stockpile'>Stock</Link>
-                <Link to='/signout'>Sign Out</Link> 
-               </div>    
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/stockpile">StockPile</a></li>
+              <li><a href="/signout">Sign Out</a></li>
+            </ul>
             ]);
         } else {
             // If not Signed In: Links to Sign In or Sign Up
-            return ([
-                <div>
-                 <Link to='/signin'>Sign In</Link>
-                 <Link to='/signup'>Sign Up</Link>
-                </div>
-            ])
+            return([
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="/signin">Sign In</a></li>
+                  <li><a href="/signup">Sign up</a></li>
+                </ul>
+              ])
         }
     }
     render() {
         return (
-        <nav className={classes.topnav}>
-             <Link to="/">StockPile</Link>
-            {this.renderLinks()}
-        </nav>
-        );                
+            <nav className="green darken-3">
+              <div class="nav-wrapper">
+                <a href="/" class="brand-logo">StockPile</a>
+                {/* <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> */}
+                {this.renderLinks()}
+              </div>
+            </nav>
+          );
     }
 }
-
+// REDUX BELOW THIS:
 function mapStateToProps(state) {
     return {
         authenticated: state.auth.authenticated
     };
 }
-
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         signoutUser
-    }, 
+    },
         dispatch
     );
 }
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

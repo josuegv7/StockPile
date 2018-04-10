@@ -1,0 +1,58 @@
+.service{
+  font-family: 'Lora', sans-serif;
+  background-image: url('./assets/images/cover.jpg');
+  /* padding: 96px 0px; */
+  background-position: center;
+  background-size: cover;
+  /* padding: 96px 0px; */
+  width: 78%;
+  margin: auto;
+  height: 35rem;
+  border-radius: .5rem;
+}
+.service .block_top{text-align: center;}
+.service .service_header{margin: 0px}
+
+.service .service_header h1{
+  color:#fafafa;
+  font-size: 3rem;
+  font-family: 'Lora', sans-serif;
+  font-weight: 700;
+}
+
+.service .service_header p{
+  color: #fafafa;
+  font-size: 1.5rem;
+  font-family: 'Lora', sans-serif;
+  font-weight: 400;
+  line-height: 1px;
+  }
+
+.block_bottom{
+  text-align: center;
+  padding-top: 50px;}
+
+
+.service .service_tab{
+  position: relative;
+  z-index: 1;
+  margin: -4rem;
+  width: 64%;
+  top: 125rem;
+  position: absolute;
+  background-color: rgba(225,210,60,.83);
+  line-height: 1.5;
+  padding: 3%;
+  color: #fff;
+  border-radius: .5rem;
+}
+.service .service_tab h4, p{
+  line-height: 1.4
+}
+
+/* ICONS */
+img {
+width: 20%;
+height: auto;
+padding-top: 3%;
+}

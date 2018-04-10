@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import {reduxForm, Field} from 'redux-form';
-import classes from "../../index.css"; 
-
+import css from '../../forms.css';
 
 
 const renderInput = field => {
     const { input, type, meta: { touched, error}  } = field;
     return (
         <div>
-            <input {...input} type={type} className={classes.signupinput}  />
+            <input {...input} type={type} className  />
             {touched && ((error && <span className="error">{error}</span>) )}
         </div>
     );
@@ -33,36 +32,37 @@ class signUp extends Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-        <div id="signUp" className={classes.cardform}>
-            <form className={classes.formbody} onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-            <h3 className={classes.formtitle}>SignUp</h3>
+        <div className={css.form} card horizontal>
+            <form className onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+            <h3 className>SignUp</h3>
              <section className = "Row">
-                <div classname={classes.row}>
-                    
-                    <label className={classes.signuplabel}>Email</label>
+                <div classname>
+                    <i className="material-icons prefix">email</i>
+                    <label className>Email</label>
                     <br/>
                     <Field  name="email"
                             type= "email"
                             component={renderInput} />
-            
+
                 </div>
-                <div classname={classes.row}>
-                    
-                    <label className={classes.signuplabel}>Password</label>
+                <div classname>
+                    <i className="material-icons prefix">lock</i>
+                    <label className>Password</label>
                     <br/>
                     <Field name="password"
                             type= "password" component={renderInput}/>
-                   
+
                 </div>
-                <div classname={classes.row}>
-                    <label className={classes.signuplabel}>Confirm</label>
+                <div classname>
+                    <i className="material-icons prefix">lock</i>
+                    <label className>Confirm</label>
                     <br/>
                     <Field name="passwordConfirm"
                             type= "password" component={renderInput} />
                 </div>
                 <center>
                 {this.renderAlert()}
-                <button action="submit" className={classes.signupbutton}>Sign Up</button>
+                <button action="submit" className>Sign Up</button>
 
                 </center>
              </section>

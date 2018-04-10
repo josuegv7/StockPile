@@ -6,7 +6,7 @@ import Header from './header';
 import Pot from './pot';
 import AddFood from './add_food';
 import RecipeList from './recipe_list';
-import classes from "../index.css"; 
+import css from "../stockpile.css";
 import { Row, Col } from 'react-flexbox-grid';
 
 
@@ -16,7 +16,7 @@ class FoodList extends Component {
     }
     addIngredientToPot = (ev) => {
         const val = ev.target.dataset.value;
-        const newPot = [ ...this.props.pot, 
+        const newPot = [ ...this.props.pot,
             val
         ];
         this.props.addToPot(newPot)
@@ -30,22 +30,22 @@ class FoodList extends Component {
     displayFoodList() {
         return _.map(this.props.foods, food => {
             return (
-                        <li key={food._id} className={classes.tablerow}>
-                            <div data-value={food.name}
+                        <tr key={food._id} className>
+                            <td data-value={food.name}
                                 onClick={this.addIngredientToPot.bind(this)}
-                                className={classes.col1}>{food.name}
-                            </div>
+                                className>{food.name}
+                            </td>
 
-                            <div className={classes.col2}>{food.type}</div>
+                            <td className>{food.type}</td>
 
-                            <div className={classes.col3}>
+                            <td className>
                                 <button data-value={food._id}
                                         onClick={this.onDeleteClick.bind(this)}
-                                        className={classes.throwoutbutton}
-                                > Throw Out 
+                                        className={css.throwoutbutton}
+                                > Throw Out
                                 </button>
-                            </div>
-                        </li>
+                            </td>
+                        </tr>
             );
         });
     }
@@ -53,27 +53,36 @@ class FoodList extends Component {
         // console.log(this.props.foods);
         // console.log(this.props.pot)
         return (
-            <div className={classes.stockpilecontainer}> 
+            <div className="container">
             <Header />
+              <div className={css.leftcard}>
                 <Row>
-                    <Col lg >
+                    <Col sm>
+                    <div className="container card">
                     <h2>StockPile</h2>
-                    <ul className={classes.responsivetable}>
-                        <li className={classes.tableheader}>
-                            <div className={classes.col1}>Name <br/>Click to add to Pot </div>
-                            <div className={classes.col2}>Type</div>
-                            <div className={classes.col3}>Throw Out</div>
-                        </li>
-                        {this.displayFoodList()}
-                    </ul>
-                    <div>
-                        <AddFood/>
+                    <table className="highlight centered responsive-table">
+                      <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Throw Out</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {this.displayFoodList()}
+                      </tbody>
+                    </table>
                     </div>
+
+
+                        <AddFood/>
+
                     </Col>
-                        <Col/>
-                            <Pot/>
-                        <Col/>
+                    <Col/>
+                      <Pot/>
+                    <Col/>
                 </Row>
+                </div>
                 <Row>
                     <Col xs={12}>
                         <Row center="xs">
@@ -94,7 +103,3 @@ function mapStateToProps(state) {
     };
 }
 export default connect (mapStateToProps, { fetchFoodList, addToPot, deleteFood })(FoodList);
-
-
-
-

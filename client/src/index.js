@@ -1,11 +1,8 @@
-import 'font-awesome/css/font-awesome.min.css';
-import './index.css';
-
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import reduxThunk from 'redux-thunk';
 import reduxPromise from 'redux-promise';
 
@@ -36,13 +33,13 @@ ReactDOM.render(
     <BrowserRouter >
     <Switch>
       <Route path="/" exact component={App}/>
-      <Route path="/signin" component={noRequireAuth(Signin)} />  
-      <Route path="/signup" component={noRequireAuth(Signup)} />  
-      
+      <Route path="/signin" component={noRequireAuth(Signin)} />
+      <Route path="/signup" component={noRequireAuth(Signup)} />
+
       {/* <Route path="/stockpile" component={StockPile} /> */}
-      <Route path="/signout" component={RequireAuth(Signout)} /> 
-      <Route path="/stockpile" component={RequireAuth(StockPile)} />  
+      <Route path="/signout" component={RequireAuth(Signout)} />
+      <Route path="/stockpile" component={RequireAuth(StockPile)} />
     </Switch>
     </BrowserRouter>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('.root'));

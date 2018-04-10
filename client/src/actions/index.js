@@ -77,6 +77,7 @@ export function addFood (values, history) {
                     payload: response
                 });
                 // history.push('/');
+                fetchFoodList();
                 history.pushState(null, '/stockpile');
             })
             .catch( () => {
@@ -94,7 +95,7 @@ export const addToPot = (ingredient) => {
 };
 
 // Delete food from Stock:
-export function deleteFood ( id, history) { 
+export function deleteFood ( id, history) {
     return function (dispatch) {
         Axios.delete(`${ROOT_URL}/myfoodlist/foods/${id}`)
             .then ( response => {
@@ -109,4 +110,3 @@ export function deleteFood ( id, history) {
         });
 };
 }
-

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import css from "../stockpile.css";
 import potIcon from '../assets/images/pot.png';
-import classes from "../index.css"; 
-import { lookuprecipesYummly } from "../actions/yummly"; 
+import { lookuprecipesYummly } from "../actions/yummly";
 
 
 class Pot extends Component {
-    
     onFormSubmit(event) {
         event.preventDefault();
         this.props.lookuprecipesYummly(this.props.pot)
@@ -20,7 +19,7 @@ class Pot extends Component {
         }
     }
     renderEmptyPot(){
-        return(<div className={classes.potIcon}><img src={potIcon} alt='POT'/></div>)
+        return(<div ><img src={potIcon} className={css.potIcon} alt='POT'/></div>)
     }
     renderPot() {
         const potIngredientList = this.props.pot.map(function(ingredient){
@@ -30,16 +29,18 @@ class Pot extends Component {
         })
         return(
             <form onSubmit={this.onFormSubmit.bind(this)} >
-            <div className={classes.potcard}>
-                <div className={classes.pottitlecontent}>
+            <div className={css.rigthcard}>
+              <div className="card">
+                <div className={css.pottitle}>
                     <h3>POT:</h3>
-                </div>  
+                </div>
                 <hr/>
-                <div className={classes.potintro}>
+                <div className={css.ingredientlist}>
                     {potIngredientList}
-                </div> 
-                <button type="submit" className={classes.addfoodbutton}>LOOK UP</button>
+                </div>
+                <button type="submit" className={css.potbutton}>LOOK UP</button>
             </div>
+          </div>
             </form>
         )
     }
@@ -56,5 +57,3 @@ function mapStateToProps(state) {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pot);
-
-
