@@ -68,20 +68,21 @@ export const fetchFoodList = () => dispatch => {
 };
 
 // Add a food to the DB:
-export function addFood (values, history) {
+export function addFood (values) {
     return function (dispatch) {
         Axios.post(`${ROOT_URL}/myfoodlist/foods`, values)
             .then( response => {
                 dispatch ({
                     type: ADD_NEW_FOOD,
                     payload: response
-                });
-                // history.push('/');
-                fetchFoodList();
-                history.pushState(null, '/stockpile');
+                })
+            })
+            .then (response => {
+                
+                    fetchFoodList
+    
             })
             .catch( () => {
-
             });
 };
 }
@@ -103,10 +104,6 @@ export function deleteFood ( id, history) {
                 type: DELETE_FOOD,
                 payload: id
             });
-            // history.push('/stockpile');
         })
-        .catch( () => {
-
-        });
 };
 }

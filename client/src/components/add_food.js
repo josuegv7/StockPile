@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { addFood } from '../actions';
+import { addFood, fetchFoodList } from '../actions';
 import css from "../stockpile.css";
 
 const renderField= field => {
@@ -17,13 +17,16 @@ class AddFood extends Component {
     onSubmit(values) {
         this.props.addFood(values);
     }
+    refreshfoodlist(){
+        this.props.fetchFoodList();
+    }
 
     render () {
         const { handleSubmit } = this.props;
         return (
                 <div className={css.addfoodcard}>
                 <div className="card horizontal responsive">
-                <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <Field
                         label="Food "
                         name="name"
@@ -35,14 +38,12 @@ class AddFood extends Component {
                         component={renderField}
                     />
                     <div className="card-action">
-                    <button type="submit" className={css.addfoodbutton}>ADD</button>
+                    <button type="submit" className={css.addfoodbutton} onClick={this.refreshfoodlist()}>ADD</button>
                     <button className={css.addfoodbutton}>Cancel</button>
-                    {/* <Redirect to={'/stockpile'} /> */}
                   </div>
                 </form>
                 </div>
                 </div>
-
         )
     }
 };
@@ -51,4 +52,4 @@ AddFood = reduxForm({
     fields: ['name', 'type'],
 })(AddFood);
 
-export default connect(null, {addFood})(AddFood)
+export default connect(null, {addFood, fetchFoodList})(AddFood)

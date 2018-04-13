@@ -30,7 +30,6 @@ class Pot extends Component {
         return(
             <form onSubmit={this.onFormSubmit.bind(this)} >
             <div className={css.rigthcard}>
-              {/* <div className="card"> */}
                 <div className={css.pottitle}>
                     <h5>POT:</h5>
                 </div>
@@ -39,11 +38,8 @@ class Pot extends Component {
                     {potIngredientList}
                 </div>
                 <button type="submit" className={css.potbutton}>LOOK UP</button>
-            {/* </div> */}
-          {/* </div> */}
           </div>
           </form>
-    
         )
     }
 };
