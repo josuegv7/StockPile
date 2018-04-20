@@ -15,5 +15,5 @@ The app's core features include:
 * Yummly filtered recipe search
 
 LogIn Info:
-Email: user3@email.com  
-Password: password
+Email: user1@email.com  
+Password: 123test
