@@ -16,4 +16,4 @@ The app's core features include:
 
 LogIn Info:
 Email: user1@email.com  
-Password: 123test
+Password: test123
