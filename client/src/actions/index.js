@@ -1,7 +1,5 @@
 import Axios from 'axios';
 import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_FOODLIST, ADD_NEW_FOOD, DELETE_FOOD, ADD_INGREDIENT} from './types';
-
-
 const ROOT_URL = 'http://localhost:4000';
 
 
@@ -78,9 +76,9 @@ export function addFood (values) {
                 })
             })
             .then (response => {
-                
+
                     fetchFoodList
-    
+
             })
             .catch( () => {
             });
