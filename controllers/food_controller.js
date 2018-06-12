@@ -1,8 +1,7 @@
 const Food = require('../models/food');
 
-// HERE IS THE ORIGINAL
 module.exports = {
-    renderFoodList(req, res, next) {
+    renderFoodList(req, res) {
         Food.find(function(err,food) {res.send(food) });
     },
     // Add to the foodlist:
@@ -11,7 +10,7 @@ module.exports = {
         Food.create(foodProps)
             .then(food => res.send(food))
             .catch(next);
-    },    
+    },
     find (req, res, next) {
         const foodId = req.params.id;
         const foodProps = req.body;

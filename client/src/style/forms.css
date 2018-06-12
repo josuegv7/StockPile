@@ -1,0 +1,8 @@
+.formbutton{
+  border: 3px solid #91B1B5;
+  color: #green darken-3;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 1% 6%;
+  display: block;
+}

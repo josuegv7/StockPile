@@ -2,43 +2,35 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchFoodList, addToPot, deleteFood, addFood } from '../actions';
-import Header from './header';
 import Pot from './pot';
 import AddFood from './add_food';
 import RecipeList from './recipe_list';
-import css from "../stockpile.css";
-import { Row, Col } from 'react-flexbox-grid';
-
+import css from "../style/stockpile.css";
 
 class FoodList extends Component {
     componentDidMount () {
         this.props.fetchFoodList();
     }
-    addIngredientToPot = (ev) => {
+    addIngredientToPot = ev => {
         const val = ev.target.dataset.value;
-        const newPot = [ ...this.props.pot,
-            val
-        ];
+        const newPot = [ ...this.props.pot, val];
         this.props.addToPot(newPot)
     }
-    onDeleteClick = (ev) =>{
+    onDeleteClick = ev =>{
         const val = ev.target.dataset.value;
         this.props.deleteFood(val);
         this.props.fetchFoodList();
     }
-
     displayFoodList() {
         return _.map(this.props.foods, food => {
             return (
-                        <tr key={food._id} className>
+                        <tr key={food._id}>
                             <td data-value={food.name}
                                 onClick={this.addIngredientToPot.bind(this)}
-                                className>{food.name}
+                            >{food.name}
                             </td>
-
-                            <td className>{food.type}</td>
-
-                            <td className>
+                            <td>{food.type}</td>
+                            <td>
                                 <button data-value={food._id}
                                         onClick={this.onDeleteClick.bind(this)}
                                         className={css.throwoutbutton}
@@ -50,40 +42,33 @@ class FoodList extends Component {
         });
     }
     render () {
-        // console.log(this.props.foods);
-        // console.log(this.props.pot)
         return (
-            <div className="container">
-            <Header />
-              <div className={css.leftcard}>
-                <Row>
-                    <Col sm>
-                    <div className="container card">
-                    <h2>StockPile</h2>
+            <div className="container center-block">
+              <div className="row justify-content-center">
+                <div className="col-lg-3">
+                  <div className="list-group center">
+                    <Pot />
+                    <AddFood />
+                  </div>
+                </div>
+                <div className="col-lg-9">
+                  <div className="card border-success mb-3 centered">
                     <table className="highlight centered responsive-table">
                       <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Throw Out</th>
+                        <tr className="table-success centered">
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Throw Out</th>
                         </tr>
                       </thead>
-                      <tbody>
-                          {this.displayFoodList()}
-                      </tbody>
+                      <tbody>{this.displayFoodList()}</tbody>
                     </table>
-                    </div>
-                        <AddFood/>
-                    </Col>
-                    <Col>
-                      <Pot/>
-                    </Col>
-                    <br/>
-                    <Col>
-                    <RecipeList xs={6} />
-                    </Col>
-                </Row>
+                  </div>
                 </div>
+              </div>
+              <div className="row justify-content-center">
+                <RecipeList/>
+              </div>
             </div>
         );
     };

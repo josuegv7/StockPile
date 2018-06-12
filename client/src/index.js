@@ -35,8 +35,6 @@ ReactDOM.render(
       <Route path="/" exact component={App}/>
       <Route path="/signin" component={noRequireAuth(Signin)} />
       <Route path="/signup" component={noRequireAuth(Signup)} />
-
-      {/* <Route path="/stockpile" component={StockPile} /> */}
       <Route path="/signout" component={RequireAuth(Signout)} />
       <Route path="/stockpile" component={RequireAuth(StockPile)} />
     </Switch>
