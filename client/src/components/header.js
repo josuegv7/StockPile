@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 import { signoutUser } from "../actions/index";
 import logo from "../assets/images/logo.png";
 
-
-
 class Header extends Component {
   renderLinks() {
     if (this.props.authenticated) {
-      // If logged In
       return (
         <div className="navbar-collapse collapse">
           <ul className="nav navbar-nav navbar-right" key='1'>
@@ -20,7 +17,6 @@ class Header extends Component {
       </div>
       );
     } else {
-      // Not Logged In
       return (
         <div className="navbar-collapse collapse">
           <ul className="nav navbar-nav navbar-right" key='2'>
@@ -41,15 +37,14 @@ class Header extends Component {
               src={logo} alt="Logo"
             />
             </a>
+            {this.renderLinks()}
           </div>
         </div>
-            {this.renderLinks()}
       </div>
     );
   }
 }
 
-// REDUX BELOW THIS:
 function mapStateToProps(state) {
   return {authenticated: state.auth.authenticated};
 }
