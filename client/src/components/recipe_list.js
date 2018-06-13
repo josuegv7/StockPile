@@ -14,7 +14,7 @@ class RecipeList extends Component {
           />
           <h4 className="card-title"> {recipeData.recipeName} </h4>
           <div>
-            <h3 class="active">Ingredients</h3>
+            <h3 className="active">Ingredients</h3>
           </div>
           <ul>
             {recipeData.ingredients.join(", ")}

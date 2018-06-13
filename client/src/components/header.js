@@ -10,18 +10,17 @@ class Header extends Component {
     if (this.props.authenticated) {
       return (
         <div className="navbar-collapse collapse">
-          <ul className="nav navbar-nav navbar-right" key='1'>
-            <li><Link to="/stockpile">StockPile</Link></li>
-            <li><Link to="/signout"> Sign Out </Link></li>
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0" key='1'>
+            <li className="nav-item active"><Link className="nav-link" to="/stockpile">StockPile</Link></li>
+            <li className="nav-item active"><Link className="nav-link" to="/signout"> Sign Out </Link></li>
           </ul>
       </div>
       );
     } else {
       return (
         <div className="navbar-collapse collapse">
-          <ul className="nav navbar-nav navbar-right" key='2'>
-            <li><a href="/signin">Sign In</a></li>
-            <li><a href="/signup">Sign up</a></li>
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0" key='2'>
+            <li className="nav-item active"><a className="nav-link" href="/signin">Sign In</a></li>
           </ul>
       </div>
       );
@@ -29,18 +28,17 @@ class Header extends Component {
   }
   render() {
     return (
-      <div className="navbar navbar-default navbar-fixed-top" style={{backgroundColor: '#2e7d32'}}>
-        <div className="container-fluid">
-          <div className="navbar-header">
+      <nav className="navbar navbar-expand-lg fixed-top"  style={{backgroundColor: '#2e7d32'}}>
             <a className="navbar-brand" href="/"><img
               style={{width: '51%', height: 'auto', padding_top: '3%'}}
               src={logo} alt="Logo"
             />
             </a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
             {this.renderLinks()}
-          </div>
-        </div>
-      </div>
+      </nav>
     );
   }
 }

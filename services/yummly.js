@@ -12,7 +12,6 @@ Yummly.getRecipes = (ingredients) => {
 
   .then(results => {
     console.log('Results GET in RecipeResult.js', results);
-    // results.json().then((data) => {});
   })
 
   console.log("QUERY", query)

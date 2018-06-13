@@ -6,12 +6,10 @@ export function lookuprecipesYummly(ingredients) {
     return function(dispatch) {
       Axios.get(`/stockpile/${ingredients}`, ingredients)
         .then(request => {
-          // console.log("FRONT REQUEST", request)
           dispatch({
             type: LOOK_UP_RECIPE,
             payload:request
           })
-          // console.log("REQUEST", request);
         })
     }
 }
