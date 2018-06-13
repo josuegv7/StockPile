@@ -1,7 +1,7 @@
 const Axios = require('axios');
 const keys = require('../config/keys')
-const API_ID = keys.YUMMLY_API_ID;
-const API_KEY = keys.YUMMLY_API_KEY;
+const API_ID = keys.YUMMLYAPIID;
+const API_KEY = keys.YUMMLYAPIKEY ;
 
 
 module.exports = {
